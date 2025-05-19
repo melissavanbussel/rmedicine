@@ -3,4 +3,6 @@ template:
   bootstrap: 5
   bslib:
     bootswatch: zephyr
+    primary: "#c70000"
+  theme: atom-one-light
 
