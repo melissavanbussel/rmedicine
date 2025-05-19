@@ -1,4 +1,6 @@
 url: https://melissavanbussel.github.io/rmedicine/
 template:
   bootstrap: 5
+  bslib:
+    bootswatch: zephyr
 
