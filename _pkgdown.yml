@@ -8,9 +8,14 @@ template:
 
 navbar:
   structure:
-    right: [search, github, my_linkedin]
+    right: [search, github, my_linkedin, js_alert]
   components:
     my_linkedin:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/melissavanbussel/
       aria-label: LinkedIn
+    js_alert:
+      icon: fa-code
+      href: "#"
+      aria-label: JavaScript
+
