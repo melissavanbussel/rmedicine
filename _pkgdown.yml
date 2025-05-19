@@ -16,6 +16,6 @@ navbar:
       aria-label: LinkedIn
     js_alert:
       icon: fa-code
-      href: "#"
+      href: "#js_alert#"
       aria-label: JavaScript
 

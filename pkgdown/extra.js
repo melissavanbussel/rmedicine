@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let javascriptAlert = document.querySelectorAll(".nav-link[href='#']");
+  let javascriptAlert = document.querySelectorAll(".nav-link[href='#js_alert#'], .nav-link[href='../#js_alert#']");
   javascriptAlert.forEach(function (jsalert) {
     jsalert.addEventListener("click", function(event) {
       alert("JavaScript is working!");
