@@ -6,3 +6,11 @@ template:
     primary: "#c70000"
   theme: atom-one-light
 
+navbar:
+  structure:
+    right: [search, github, my_linkedin]
+  components:
+    my_linkedin:
+      icon: fa-linkedin
+      href: https://www.linkedin.com/in/melissavanbussel/
+      aria-label: LinkedIn
