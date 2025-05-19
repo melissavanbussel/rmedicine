@@ -5,6 +5,18 @@ template:
     bootswatch: zephyr
     primary: "#c70000"
   theme: atom-one-light
+  includes:
+    after_body: |
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          document.addEventListener("click", function () {
+            if (typeof confetti === "function") {
+              confetti();
+            }
+          });
+        });
+      </script>
 
 navbar:
   structure:
