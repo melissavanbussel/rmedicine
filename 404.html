@@ -71,7 +71,14 @@ Content not found. Please use links in the navbar.
 
 
 
-
-
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script><script src="https://melissavanbussel.github.io/rmedicine/NA">
+  document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("click", function () {
+      if (typeof confetti === "function") {
+        confetti();
+      }
+    });
+  });
+</script>
+</body>
 </html>

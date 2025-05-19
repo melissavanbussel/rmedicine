@@ -80,7 +80,13 @@ If it did do something, it might require more words to explain.</p></dd>
 
 
 
-
-
-  </body></html>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script><script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("click", function () {
+      if (typeof confetti === "function") {
+        confetti();
+      }
+    });
+  });
+</script></body></html>
 
