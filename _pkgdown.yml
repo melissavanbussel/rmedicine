@@ -4,6 +4,8 @@ template:
   bslib:
     bootswatch: zephyr
     primary: "#c70000"
+    base_font: {google: "Outfit"}
+    code_font: {google: "Fira Code"}
   theme: atom-one-light
   includes:
     after_body: |
