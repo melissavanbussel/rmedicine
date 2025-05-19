@@ -6,7 +6,9 @@ template:
     primary: "#c70000"
     base_font: {google: "Outfit"}
     code_font: {google: "Fira Code"}
+  light-switch: true
   theme: atom-one-light
+  theme-dark: atom-one-dark
   includes:
     after_body: |
       <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -22,7 +24,7 @@ template:
 
 navbar:
   structure:
-    right: [search, github, my_linkedin, js_alert]
+    right: [search, github, my_linkedin, js_alert, lightswitch]
   components:
     my_linkedin:
       icon: fa-linkedin

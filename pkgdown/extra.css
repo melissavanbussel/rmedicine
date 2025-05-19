@@ -1,3 +1,7 @@
-.form-control {
+[data-bs-theme="light"] .form-control {
+  background-color: #e6b1db;
+}
+
+[data-bs-theme="dark"] .form-control {
   background-color: #0d2e50;
 }
