@@ -69,10 +69,15 @@ COPYRIGHT HOLDER: rmedicine authors
 
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script><script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener("click", function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", function (e) {
       if (typeof confetti === "function") {
-        confetti();
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
+        confetti({
+          origin: { x: x, y: y }
+        });
       }
     });
   });
