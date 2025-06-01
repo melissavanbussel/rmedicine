@@ -33,7 +33,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::pkgdown, local::., reticulate
+          extra-packages: any::pkgdown, local::., reticulate, jsonlite, testthat, covr
           needs: website
 
       - name: Build site
@@ -42,6 +42,9 @@ jobs:
 
       - name: Override link.svg image with custom_link.svg image
         run: cp docs/custom_link.svg docs/link.svg
+
+      - name: Add test coverage badge
+        run: Rscript -e "jsonlite::write_json(list(coverage = sprintf('%.1f%%', covr::percent_coverage(covr::package_coverage()))), 'docs/coverage.json', auto_unbox = TRUE)"
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'

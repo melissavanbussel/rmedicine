@@ -93,5 +93,4 @@ home:
 
           ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)
 
-          ![GitHub User's stars](https://img.shields.io/github/stars/melissavanbussel?style=plastic&label=GitHub%20user's%20stars)
-
+          ![coverage](https://img.shields.io/endpoint?url=https://melissavanbussel.github.io/rmedicine/coverage.json&label=coverage&color=brightgreen)
