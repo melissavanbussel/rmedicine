@@ -28,14 +28,14 @@ navbar:
     right: [search, github, my_linkedin, js_alert, lightswitch]
   components:
     vignettes:
-      text: Vignettes
+      text: " Vignettes"
       icon: fa-book
       menu:
         - text: Examples
         - text: "  Tutorial Title"
           href: articles/my_vignette.html
     rd_files:
-      text: Function Documentation
+      text: " Function Documentation"
       icon: fa-file
       menu:
         - text: All functions

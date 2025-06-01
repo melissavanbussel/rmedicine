@@ -40,15 +40,6 @@ jobs:
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
 
-      - name: Create folder for project assets
-        run: mkdir -p docs/project_assets
-
-      - name: Copy project_assets folder to docs folder
-        run: cp -r project_assets/* docs/project_assets
-
-      - name: Copy link.svg image
-        run: cp project_assets/link.svg docs/link.svg
-
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4.5.0
