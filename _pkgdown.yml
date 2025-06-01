@@ -76,3 +76,22 @@ footer:
   components:
     developed_by: "Developed by [Melissa Van Bussel](https://melissavanbussel.com/) :computer: for the [R/Medicine 2025 Conference](https://rconsortium.github.io/RMedicine_website/)."
     built_with_pkgdown: "This site was built using [pkgdown](https://pkgdown.r-lib.org/)!&nbsp;&nbsp;<img src='https://pkgdown.r-lib.org/logo.png' alt='pkgdown logo' width='25'>"
+
+authors:
+  Melissa Van Bussel:
+    href: https://melissavanbussel.com/
+    html: "<img src='https://images.squarespace-cdn.com/content/v1/615e5d6733744f26a45a0916/0005b0b1-e327-4965-89c0-3c38a167ac35/Melissa_VanBussel_2025.jpg?format=2500w' width=100 alt=''><br><span style=''>Melissa Van Bussel</span>"
+
+home:
+  sidebar:
+    structure: [badges, links, authors]
+    components:
+      badges:
+        title: Package badges
+        text: |
+          ![](https://img.shields.io/github/r-package/v/melissavanbussel/rmedicine?label=rmedicine)
+
+          ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)
+
+          ![GitHub User's stars](https://img.shields.io/github/stars/melissavanbussel?style=plastic&label=GitHub%20user's%20stars)
+
