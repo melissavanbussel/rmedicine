@@ -1,6 +1,6 @@
 Package: rmedicine
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Version: 0.0.9
 Authors@R: 
     person("Melissa", "Van Bussel", , "melissalisevb@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
