@@ -15,7 +15,7 @@ knitr:
 library(rmedicine)
 ```
 
-# This is a quarto document
+# This is a Quarto document
 
 Which means you can run R and Python code, and use Quarto chunk options.
 
@@ -36,3 +36,13 @@ You can include math as well:
 $$
 x^2 + y^2 = 9
 $$
+
+Some features, like callouts, don't work properly, but still look ok: 
+
+::: {.callout-warning}
+
+## Warning
+
+This is a warning.
+
+:::
