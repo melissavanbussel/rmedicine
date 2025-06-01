@@ -59,3 +59,10 @@ navbar:
       href: "#js_alert#"
       aria-label: JavaScript
 
+footer:
+  structure:
+    left: developed_by
+    right: built_with_pkgdown
+  components:
+    developed_by: "Developed by [Melissa Van Bussel](https://melissavanbussel.com/) :computer: for the [R/Medicine 2025 Conference](https://rconsortium.github.io/RMedicine_website/)."
+    built_with_pkgdown: "This site was built using [pkgdown](https://pkgdown.r-lib.org/)!&nbsp;&nbsp;<img src='https://pkgdown.r-lib.org/logo.png' alt='pkgdown logo' width='25'>"
