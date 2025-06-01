@@ -32,16 +32,19 @@ navbar:
       icon: fa-book
       menu:
         - text: Examples
-        - text: "   Tutorial Title"
-          href: articles/my_vignette.qmd
+        - text: "  Tutorial Title"
+          href: articles/my_vignette.html
     rd_files:
       text: Function Documentation
       icon: fa-file
       menu:
         - text: All functions
           href: reference/index.html
-        - text: "   Print Hello World"
+        - text: "  Print things"
+        - text: "    Print Hello World"
           href: reference/print_hello_world.html
+        - text: "    Print Hello R/Medicine"
+          href: reference/print_hello_rmedicine.html
     my_linkedin:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/melissavanbussel/
