@@ -19,7 +19,20 @@ library(rmedicine)
 
 Which means you can run R and Python code, and use Quarto chunk options.
 
+Here is R code, including from the current package: 
+
 ```{r}
-#| code-line-numbers: true
-print_hello_world()
+print_hello_world(x = "Hello")
 ```
+
+Here is Python code:
+
+```{python}
+print(1 + 1)
+```
+
+You can include math as well: 
+
+$$
+x^2 + y^2 = 9
+$$
