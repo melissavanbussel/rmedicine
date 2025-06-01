@@ -27,6 +27,16 @@ template:
         });
       </script>
 
+reference:
+  - title: ":pencil: Functions that print things"
+    desc: These functions will all print things to your console.
+  - subtitle: ":one: First subsection"
+    contents:
+      - print_hello_world
+  - subtitle: ":two: Second subsection"
+    contents:
+      - print_hello_rmedicine
+
 navbar:
   structure:
     left: [vignettes, rd_files]
