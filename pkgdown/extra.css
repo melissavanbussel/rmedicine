@@ -1,9 +1,9 @@
 [data-bs-theme="light"] .form-control {
-  background-color: #e6b1db;
+  background-color: #f4cccc;
 }
 
 [data-bs-theme="dark"] .form-control {
-  background-color: #0d2e50;
+  background-color: #700;
 }
 
 .navbar-brand:hover {
