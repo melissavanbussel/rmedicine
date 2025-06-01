@@ -25,6 +25,12 @@ Here is R code, including from the current package:
 print_hello_world(x = "Hello")
 ```
 
+You can also include Python code (remember to add `reticulate` to `extra-packages` in the GitHub workflow):
+
+```{python}
+1 + 1
+```
+
 You can include math as well: 
 
 $$
