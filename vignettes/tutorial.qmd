@@ -1,0 +1,25 @@
+---
+title: "Tutorial Title"
+vignette: >
+  %\VignetteIndexEntry{Tutorial Title}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+```{r}
+#| label: setup
+library(rmedicine)
+```
+
+# This is a quarto document
+
+Which means you can run R and Python code, and use Quarto chunk options.
+
+```{r}
+#| code-line-numbers: true
+print_hello_world()
+```
