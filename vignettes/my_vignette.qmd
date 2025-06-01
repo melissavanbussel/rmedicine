@@ -25,12 +25,6 @@ Here is R code, including from the current package:
 print_hello_world(x = "Hello")
 ```
 
-Here is Python code:
-
-```{python}
-print(1 + 1)
-```
-
 You can include math as well: 
 
 $$
