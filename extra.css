@@ -5,3 +5,7 @@
 [data-bs-theme="dark"] .form-control {
   background-color: #0d2e50;
 }
+
+.navbar-brand:hover {
+  color: var(--bs-secondary-color);
+}
