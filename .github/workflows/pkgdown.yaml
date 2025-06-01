@@ -41,7 +41,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Override link.svg image with custom_link.svg image
-        run: cp custom_link.svg docs/link.svg
+        run: cp docs/custom_link.svg docs/link.svg
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
