@@ -33,28 +33,8 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          install-quarto: true
           extra-packages: any::pkgdown, local::.
           needs: website
-
-      - name: Find Quarto installation
-        run: which quarto
-
-      - name: Find Quarto version
-        run: quarto -v
-
-      - name: Check Quarto in R
-        run: |
-          Rscript -e "print(Sys.which('quarto'))"
-
-      - name: Set the Quarto environment variable
-        run: |
-          QUARTO_PATH=$(which quarto)
-          Rscript -e "options(quarto.path = '${QUARTO_PATH}')"
-
-      - name: Debug render manually
-        run: |
-          Rscript -e "quarto::quarto_render('vignettes/my_vignette.qmd', quiet = FALSE)"
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
