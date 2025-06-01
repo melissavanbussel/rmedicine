@@ -91,6 +91,6 @@ home:
         text: |
           ![](https://img.shields.io/github/r-package/v/melissavanbussel/rmedicine?label=rmedicine)
 
-          ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)
+          ![](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)
 
-          ![coverage](https://img.shields.io/endpoint?url=https://melissavanbussel.github.io/rmedicine/coverage.json&label=coverage&color=brightgreen)
+          ![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmelissavanbussel.github.io%2Frmedicine%2Fcoverage.json&query=%24.coverage&label=test%20coverage)
