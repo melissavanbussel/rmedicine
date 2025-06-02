@@ -1,0 +1,37 @@
+/*-- scss:defaults --*/
+$primary-color: #6C63FF;
+$secondary-color: #9E9FF7;
+$tertiary-color: lighten($secondary-color, 15%);
+$accent-color: #FFC107;
+$theme-white: #fff;
+$theme-black: #000;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+
+$presentation-heading-color: $theme-white;
+$body-color: $primary-color;
+$link-color: $secondary-color;
+$selected-text-color: $secondary-color;
+$code-color: $accent-color;
+$code-block-bg: $tertiary-color;
+
+/*-- scss:rules --*/
+
+@mixin background-full {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  p {
+    color: $secondary-color;
+  }
+  a {
+    color: lighten($link-color, 15%);
+  }
+  a:hover {
+    color: lighten($link-color, 25%);
+  }
+}

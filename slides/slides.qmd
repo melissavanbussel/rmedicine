@@ -1,0 +1,18 @@
+---
+title: 'GitHub Pages and pkgdown'
+author: 'Melissa Van Bussel'
+format:
+  revealjs:
+    theme: custom.scss
+    highlight-style: haddock
+    title-slide-attributes: 
+      data-background-image: 'logo.png'
+---
+
+## First slide
+
+With some test content in it.
+
+```{r}
+x <- 1
+```
