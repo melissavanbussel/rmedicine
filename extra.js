@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgSrc = `${prefix}logo.png`;
 
   brand.innerHTML = `
-    <img src="${imgSrc}" height="30" style="vertical-align: middle; margin-right: 10px;" title="My awesome package!">
+    <img src="${imgSrc}" height="30" style="vertical-align: middle; margin-right: 10px;"">
     <span style="vertical-align: middle;">rmedicine</span>
   `;
 });
