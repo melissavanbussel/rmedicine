@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!brand) return;
 
   // Use different offset based on environment
-  const offset = window.location.protocol === "file:" ? 7 : 2;
+  const offset = window.location.protocol === "file:" ? 7 : 1;
 
   const pathParts = window.location.pathname.replace(/^\/+/, '').split('/');
   const depth = Math.max(0, pathParts.length - offset);
