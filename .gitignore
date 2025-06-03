@@ -7,3 +7,6 @@
 docs
 inst/doc
 **/.quarto/
+rmedicine.Rcheck/
+rmedicine*.tar.gz
+rmedicine*.tgz
