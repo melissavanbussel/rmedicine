@@ -5,8 +5,6 @@ format:
   revealjs:
     theme: custom.scss
     highlight-style: zenburn
-    title-slide-attributes: 
-      data-background-image: 'logo.png'
 ---
 
 ## First slide
