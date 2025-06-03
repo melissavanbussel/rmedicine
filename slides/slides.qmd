@@ -4,7 +4,7 @@ author: 'Melissa Van Bussel'
 format:
   revealjs:
     theme: custom.scss
-    highlight-style: haddock
+    highlight-style: zenburn
     title-slide-attributes: 
       data-background-image: 'logo.png'
 ---
@@ -14,5 +14,7 @@ format:
 With some test content in it.
 
 ```{r}
+#| echo: true
 x <- 1
+x
 ```
