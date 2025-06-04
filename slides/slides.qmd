@@ -841,19 +841,28 @@ navbar:
 
 ::: {.column width="50%"}
 
-In the `pkgdown/extra.js` file (replace with your package name and URL):
+In the `pkgdown/extra.js` file (replace with your package name, URL, and folder depth):
 
 ```js
 document.addEventListener("DOMContentLoaded", function () {
   const brand = document.querySelector(".navbar-brand");
-  if (brand) {
-    const base = document.querySelector("base")?.href || "/";
-    brand.innerHTML = `
-      <img src="melissavanbussel.github.io/rmedicine/logo.png" height="30" style="vertical-align: middle; margin-right: 10px;">
-      <span style="vertical-align: middle;">rmedicine</span>
-    `;
-  }
+  if (!brand) return;
+
+  // Use different offset based on environment
+  const offset = window.location.protocol === "file:" ? 7 : 1;
+
+  const pathParts = window.location.pathname.replace(/^\/+/, '').split('/');
+  const depth = Math.max(0, pathParts.length - offset);
+  const prefix = '../'.repeat(depth);
+
+  const imgSrc = `${prefix}logo.png`;
+
+  brand.innerHTML = `
+    <img src="${imgSrc}" height="30" style="vertical-align: middle; margin-right: 10px;"">
+    <span style="vertical-align: middle;">rmedicine</span>
+  `;
 });
+
 ```
 
 :::
@@ -984,9 +993,62 @@ home:
 
 # Section 6: Extra fancy stuff
 
-## Using a custom domain for GH Pages
+## Using a custom domain for GitHub Pages
 
-# Putting Quarto or other stuff inside your pkgdown
+* By default, your website will end with `.github.io`
+* You can purchase a custom domain from any provider (you do not need to purchase hosting services)
+* For this workshop, I purchased `ggnot2.site` for a year for $\approx$ $2 CAD from `[domain.com](https://www.domain.com/)
+
+## Telling your domain to point to your GitHub Pages
+
+From your domain provider's DNS settings (full details [here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)):
+
+* Remove any default `A` records
+* Add the following 4 IP addresses as `A` records (use `@` rather than `www`)
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+* Add a `CNAME` record (use `www` rather than `@`) and point it to your GitHub Pages URL
+
+```
+melissavanbussel.github.io/rmedicine
+```
+
+:::{.callout-tip}
+
+## Tip
+
+If your custom domain has a different depth than your GitHub Pages URL, you may need to adjust some file paths.
+
+:::
+
+## Telling GitHub Pages that you have the rights to do this 😊
+
+* From your GitHub project: `Settings > Pages > Custom domain` and enter the domain **without** `www` or `https://` in front of it (e.g., `ggnot2.site`)
+* Check the "Enforce HTTPS" checkbox
+* It will take 15 minutes to 48 hours for it to work
+
+## Including Quarto files inside of your `pkgdown` site
+
+* The slides for this workshop are actually rendered as part of my package's workflow! 
+* They are included in the `slides/` folder of my package.
+* I don't necessarily *recommend* this approach, but it does demonstrate how creative you can get with GitHub workflows.
+
+## How to include a Quarto file inside of your `pkgdown` site
+
+* Create a `slides` folder, then a `slides.qmd` file in this folder
+* Add `^slides$` to your `.Rbuildignore`
+* Add a `quarto render` command to your `.github/workflows/pkgdown.yaml` file, and output the files to the `docs` folder
+
+```yaml
+      - name: Render the quarto slides
+        run: quarto render slides/slides.qmd --output-dir="../docs"
+```
 
 # Feedback form
 
