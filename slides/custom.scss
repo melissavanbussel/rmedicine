@@ -1,20 +1,20 @@
 /*-- scss:defaults --*/
-$primary-color: #6C63FF;
-$secondary-color: #9E9FF7;
-$tertiary-color: lighten($secondary-color, 15%);
-$accent-color: #FFC107;
+$primary-color: #6E6295;
+$secondary-color: #E04d39;
+$tertiary-color: lighten($primary-color, 15%);
+$accent-color: #85d2d0;
 $theme-white: #fff;
 $theme-black: #000;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 $font-family-sans-serif: 'Poppins', sans-serif;
 
 
-$presentation-heading-color: $theme-black;
+$presentation-heading-color: $secondary-color;
 $body-color: $primary-color;
 $link-color: $secondary-color;
-$selected-text-color: $secondary-color;
+// $selected-text-color: $secondary-color;
 $code-color: $accent-color;
-$code-block-bg: $tertiary-color;
+// $code-block-bg: $tertiary-color;
 
 /*-- scss:rules --*/
 
@@ -34,4 +34,8 @@ $code-block-bg: $tertiary-color;
   a:hover {
     color: lighten($link-color, 25%);
   }
+}
+
+.reveal code {
+  background-color: #303030 !important;
 }
