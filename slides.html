@@ -692,33 +692,114 @@ Melissa Van Bussel
 <span id="cb32-7"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":two: Second subsection"</span></span>
 <span id="cb32-8"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
 <span id="cb32-9"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section>
-<section>
-<section id="basic-navbar-customization" class="title-slide slide level1 center">
-<h1>Basic navbar customization</h1>
-
 </section>
-<section id="add-search-github-my_linkedin-and-lightswitch-components" class="slide level2">
-<h2>Add search, github, my_linkedin, and lightswitch components</h2>
+<section id="customizing-navbar-contents" class="slide level2">
+<h2>Customizing navbar contents</h2>
+<ul>
+<li>There are some built-in options for the navbar, such as <code>search</code>, <code>github</code> and <code>lightswitch</code></li>
+</ul>
+<pre><code>navbar:
+  structure:
+    right: [search, github, lightswitch]</code></pre>
 </section>
-<section id="add-the-font-awesome-icons" class="slide level2">
-<h2>Add the font-awesome icons</h2>
-</section></section>
-<section id="basic-footer-customization" class="title-slide slide level1 center">
-<h1>Basic footer customization</h1>
-
+<section id="components" class="slide level2">
+<h2>Components</h2>
+<ul>
+<li>You can create custom buttons in the navbar using <strong>components</strong></li>
+<li>Use <a href="https://fontawesome.com/search?ic=free">fontawesome icons</a> to customize the button appearance</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>navbar<span class="sc">:</span></span>
+<span id="cb34-2"><a href=""></a>  structure<span class="sc">:</span></span>
+<span id="cb34-3"><a href=""></a>    right<span class="sc">:</span> [search, github, my_linkedin, lightswitch]</span>
+<span id="cb34-4"><a href=""></a>  components<span class="sc">:</span></span>
+<span id="cb34-5"><a href=""></a>    my_linkedin<span class="sc">:</span></span>
+<span id="cb34-6"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>linkedin</span>
+<span id="cb34-7"><a href=""></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>melissavanbussel<span class="sc">/</span></span>
+<span id="cb34-8"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> LinkedIn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-
-<section>
-<section id="adding-javascript-or-other-things" class="title-slide slide level1 center">
-<h1>Adding javascript or other things</h1>
-
+<section id="customizing-footer-contents" class="slide level2">
+<h2>Customizing footer contents</h2>
+<ul>
+<li>The footer works <strong>very</strong> similarly to the navbar</li>
+<li>It’s markdown, so you can include almost anything you want!</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a href=""></a><span class="fu">footer</span><span class="kw">:</span></span>
+<span id="cb35-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
+<span id="cb35-3"><a href=""></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> developed_by</span></span>
+<span id="cb35-4"><a href=""></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> built_with_pkgdown</span></span>
+<span id="cb35-5"><a href=""></a><span class="at">  </span><span class="fu">components</span><span class="kw">:</span></span>
+<span id="cb35-6"><a href=""></a><span class="at">    </span><span class="fu">developed_by</span><span class="kw">:</span><span class="at"> </span><span class="st">"Developed by [Melissa Van Bussel](https://melissavanbussel.com/) :computer: for the [R/Medicine 2025 Conference](https://rconsortium.github.io/RMedicine_website/)."</span></span>
+<span id="cb35-7"><a href=""></a><span class="at">    </span><span class="fu">built_with_pkgdown</span><span class="kw">:</span><span class="at"> </span><span class="st">"This site was built using [pkgdown](https://pkgdown.r-lib.org/)!&amp;nbsp;&amp;nbsp;&lt;img src='https://pkgdown.r-lib.org/logo.png' alt='pkgdown logo' width='25'&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="adding-the-js_alert" class="slide level2">
-<h2>Adding the js_alert</h2>
+<section id="adding-javascript" class="slide level2">
+<h2>Adding JavaScript</h2>
+<ul>
+<li>Earlier, we saw the <code>extra.scss</code> file</li>
+<li><code>pkgdown</code> also automatically recognizes the <code>pkgdown/extra.js</code> file</li>
+</ul>
+<pre><code>└── 📁 rmedicine/
+    └── 📁 pkgdown/
+        └── 📄 extra.scss
+        └── 📄 extra.js</code></pre>
 </section>
-<section id="adding-the-canvas-confetti" class="slide level2">
-<h2>Adding the canvas confetti</h2>
+<section id="lets-see-it-in-action" class="slide level2">
+<h2>Let’s see it in action</h2>
+<ul>
+<li>We’ll add an additional component to our navbar called <code>#js_alert#</code></li>
+<li>When the button is clicked, a pop-up message will appear</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="9-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>navbar<span class="sc">:</span></span>
+<span id="cb37-2"><a href=""></a>  structure<span class="sc">:</span></span>
+<span id="cb37-3"><a href=""></a>    right<span class="sc">:</span> [search, github, my_linkedin, lightswitch]</span>
+<span id="cb37-4"><a href=""></a>  components<span class="sc">:</span></span>
+<span id="cb37-5"><a href=""></a>    my_linkedin<span class="sc">:</span></span>
+<span id="cb37-6"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>linkedin</span>
+<span id="cb37-7"><a href=""></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>melissavanbussel<span class="sc">/</span></span>
+<span id="cb37-8"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> LinkedIn</span>
+<span id="cb37-9"><a href=""></a>   js_alert<span class="sc">:</span></span>
+<span id="cb37-10"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>code</span>
+<span id="cb37-11"><a href=""></a>      href<span class="sc">:</span> <span class="st">"#js_alert#"</span></span>
+<span id="cb37-12"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> JavaScript</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb38-1"><a href=""></a><span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"DOMContentLoaded"</span><span class="op">,</span> <span class="kw">function</span>() {</span>
+<span id="cb38-2"><a href=""></a>  <span class="kw">let</span> javascriptAlert <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">".nav-link[href*='#js_alert#']"</span>)<span class="op">;</span></span>
+<span id="cb38-3"><a href=""></a>  javascriptAlert<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (jsAlert) {</span>
+<span id="cb38-4"><a href=""></a>    jsAlert<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb38-5"><a href=""></a>      <span class="bu">event</span><span class="op">.</span><span class="fu">preventDefault</span>()<span class="op">;</span></span>
+<span id="cb38-6"><a href=""></a>      <span class="fu">alert</span>(<span class="st">"JavaScript is working!"</span>)<span class="op">;</span></span>
+<span id="cb38-7"><a href=""></a>    })<span class="op">;</span></span>
+<span id="cb38-8"><a href=""></a>  })<span class="op">;</span></span>
+<span id="cb38-9"><a href=""></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="can-you-add-more-files" class="slide level2">
+<h2>Can you add more files?</h2>
+<p>Yes! You can insert <a href="https://pkgdown.r-lib.org/articles/customise.html#additional-html-and-files">additional HTML etc.</a></p>
+<p>For example, we can add additional javascript using <code>after_body</code> in the <code>_pkgdown.yml</code> file:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href=""></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb39-2"><a href=""></a><span class="at">  </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb39-3"><a href=""></a><span class="fu">    after_body</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb39-4"><a href=""></a>      &lt;script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"&gt;&lt;/script&gt;</span>
+<span id="cb39-5"><a href=""></a>      &lt;script&gt;</span>
+<span id="cb39-6"><a href=""></a>        document.addEventListener("DOMContentLoaded", function () {</span>
+<span id="cb39-7"><a href=""></a>          document.addEventListener("click", function (e) {</span>
+<span id="cb39-8"><a href=""></a>            if (typeof confetti === "function") {</span>
+<span id="cb39-9"><a href=""></a>              const x = e.clientX / window.innerWidth;</span>
+<span id="cb39-10"><a href=""></a>              const y = e.clientY / window.innerHeight;</span>
+<span id="cb39-11"><a href=""></a></span>
+<span id="cb39-12"><a href=""></a>              confetti({</span>
+<span id="cb39-13"><a href=""></a>                origin: { x: x, y: y }</span>
+<span id="cb39-14"><a href=""></a>              });</span>
+<span id="cb39-15"><a href=""></a>            }</span>
+<span id="cb39-16"><a href=""></a>          });</span>
+<span id="cb39-17"><a href=""></a>        });</span>
+<span id="cb39-18"><a href=""></a>      &lt;/script&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section id="break-1" class="title-slide slide level1 center">
 <h1>BREAK</h1>
@@ -809,7 +890,7 @@ Melissa Van Bussel
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="https://ggnot2.site/index.html">ggnot2.site/index.html</a></p>
+<p><a href="https://ggnot2.site/index.html">ggnot2.site</a></p>
 </div>
 </div></div>
 
