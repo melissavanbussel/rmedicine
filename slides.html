@@ -10,7 +10,6 @@
   <meta name="generator" content="quarto-1.7.31">
 
   <meta name="author" content="Melissa Van Bussel">
-  <meta name="dcterms.date" content="2025-06-09">
   <title>R package development with GitHub Pages and pkgdown</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -94,7 +93,7 @@
     code span.vs { color: #cc9393; } /* VerbatimString */
     code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-802b47ddbd5fd4e38e9491773c437ec9.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-d786bd3921bf261073b29c828d6f1984.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -207,7 +206,6 @@ Melissa Van Bussel
     </div>
 </div>
 
-  <p class="date">2025-06-09</p>
 </section>
 <section>
 <section id="housekeeping-and-preamble" class="title-slide slide level1 center">
@@ -337,11 +335,110 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"print_hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:60%;">
-<p>Right column</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co">#' Print hello world</span></span>
+<span id="cb8-2"><a href=""></a><span class="co">#'</span></span>
+<span id="cb8-3"><a href=""></a><span class="co">#' This function just prints hello world.</span></span>
+<span id="cb8-4"><a href=""></a><span class="co">#'</span></span>
+<span id="cb8-5"><a href=""></a><span class="co">#' @param x This argument does nothing.</span></span>
+<span id="cb8-6"><a href=""></a><span class="co">#'  If it did do something, it might require more words to explain.</span></span>
+<span id="cb8-7"><a href=""></a><span class="co">#'</span></span>
+<span id="cb8-8"><a href=""></a><span class="co">#' @return Prints `"Hello, world!"` to the console</span></span>
+<span id="cb8-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb8-10"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb8-11"><a href=""></a><span class="co">#' print_hello_world(x = 1)</span></span>
+<span id="cb8-12"><a href=""></a><span class="co">#'</span></span>
+<span id="cb8-13"><a href=""></a><span class="co">#' @export</span></span>
+<span id="cb8-14"><a href=""></a>print_hello_world <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-15"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Hello, world!"</span>)</span>
+<span id="cb8-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div></div>
+</section>
+<section id="lets-add-a-second-function" class="slide level2">
+<h2>Let’s add a second function</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"print_hello_rmedicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co">#' Print hello R/Medicine</span></span>
+<span id="cb10-2"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-3"><a href=""></a><span class="co">#' This function just prints hello R/Medicine.</span></span>
+<span id="cb10-4"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-5"><a href=""></a><span class="co">#' @param x This argument does nothing.</span></span>
+<span id="cb10-6"><a href=""></a><span class="co">#'  If it did do something, it might require more words to explain.</span></span>
+<span id="cb10-7"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-8"><a href=""></a><span class="co">#' @return Prints `"Hello, R/Medicine"` to the console</span></span>
+<span id="cb10-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-10"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb10-11"><a href=""></a><span class="co">#' print_hello_rmedicine(x = 1)</span></span>
+<span id="cb10-12"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-13"><a href=""></a><span class="co">#' @export</span></span>
+<span id="cb10-14"><a href=""></a>print_hello_rmedicine <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb10-15"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Hello, R/Medicine!"</span>)</span>
+<span id="cb10-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="we-should-probably-add-some-tests-too" class="slide level2">
+<h2>We should probably add some tests, too</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">The <code>print_hello_world</code> function</a></li><li><a href="#tabset-1-2">The <code>print_hello_rmedicine</code> function</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># install.packages("testthat")</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">library</span>(testthat)</span>
+<span id="cb11-3"><a href=""></a><span class="fu">use_test</span>(<span class="st">"print_hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">test_that</span>(<span class="st">"print_hello_world prints hello world"</span>, {</span>
+<span id="cb12-2"><a href=""></a>  <span class="fu">expect_equal</span>(</span>
+<span id="cb12-3"><a href=""></a>    <span class="fu">print_hello_world</span>(<span class="at">x =</span> <span class="st">"test"</span>),</span>
+<span id="cb12-4"><a href=""></a>    <span class="st">"Hello, world!"</span></span>
+<span id="cb12-5"><a href=""></a>  )</span>
+<span id="cb12-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</div>
+<div id="tabset-1-2">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># install.packages("testthat")</span></span>
+<span id="cb13-2"><a href=""></a><span class="fu">library</span>(testthat)</span>
+<span id="cb13-3"><a href=""></a><span class="fu">use_test</span>(<span class="st">"print_hello_rmedicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">test_that</span>(<span class="st">"print_hello_rmedicine prints hello rmedicine"</span>, {</span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">expect_equal</span>(</span>
+<span id="cb14-3"><a href=""></a>    <span class="fu">print_hello_rmedicine</span>(<span class="at">x =</span> <span class="st">"test"</span>),</span>
+<span id="cb14-4"><a href=""></a>    <span class="st">"Hello, R/Medicine!"</span></span>
+<span id="cb14-5"><a href=""></a>  )</span>
+<span id="cb14-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
 </section></section>
 <section id="getting-things-up-onto-github-pages" class="title-slide slide level1 center">
 <h1>Getting things up onto GitHub Pages</h1>
@@ -732,14 +829,14 @@ Melissa Van Bussel
 
     	Reveal.addEventListener('ready', (event) => {
                 if (event.indexh === 0) {
-                  document.querySelector("div.slide-menu-button").style.display = "none";
+                  document.querySelector("div.slide-menu-button").style.display = "none !important";
                 } else {
                   document.querySelector("div.slide-menu-button").style.display = "block";
                 }
               });
               Reveal.addEventListener('slidechanged', (event) => {
                 if (event.indexh === 0) {
-                  document.querySelector("div.slide-menu-button").style.display = "none";
+                  document.querySelector("div.slide-menu-button").style.display = "none !important";
                 } else {
                   document.querySelector("div.slide-menu-button").style.display = "block";
                 }
