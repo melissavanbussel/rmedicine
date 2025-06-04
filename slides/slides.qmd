@@ -678,35 +678,313 @@ template:
 
 # BREAK
 
-# A little bit more about how GH Pages actually works
+# Section 5: Stuff that requires a deeper understanding of GitHub Pages
 
-# Creating the project_assets folder
+## ~ELI5~ ELI15: How does GitHub Pages actually work*?
 
-## Changing the link.svg image
+(* = in our current, very specific scenario)
 
-# Adding a vignette
+* When you push to `main`, the terminal commands in the `.github/workflows/pkgdown.yaml` file are run on a virtual machine
+* This file defines the **"workflow"** (pipeline)
+* The commands tell GitHub to:
+  * Install stuff: R, pandoc, our R packages...
+  * Build the site (`pkgdown::build_site_github_pages()`)
+  * Place the resulting HTML files in the correct place (`/docs`) 😊
 
-# Redoing the navbar structure
+## ...Why do I need to know this?
 
-# Adding an image to your navbar
+* The `pkgdown` and `usethis` packages take care of the hard work for us by **writing this file for us**
+* If we want to do more complicated things, though, we need to be able to **read, understand, and modify this file.**
 
-## The js
+## GitHub Actions
 
-## The CSS
+* If you plan on re-running the same terminal commands in many different workflows/pipelines/projects, you probably don't want to retype them out all the time
+* **Example:** You'll probably always want to install R for every R project
+* You can create a **GitHub Action** and run a series of terminal commands with just 2 lines, instead of many (e.g., 50+)!
+* Other people can use your Actions, too! 🤝
 
-# The sidebar
+## Example: Install Quarto action
 
-# Basic badges
+It's pretty complicated:
 
-# Dynamic badges and your pipeline
+<iframe src="https://github.com/quarto-dev/quarto-actions/blob/main/setup/action.yml" width="800" height="450"></iframe>
+
+## GitHub Actions in the `.github/workflows/pkgdown.yaml` file
+
+...The Quarto installation is just one small part of *this* action
+
+```yaml
+      - uses: r-lib/actions/setup-r-dependencies@v2
+```
+
+## What's my point?
+
+* **Point 1:** It's complicated, and it's great that most of the hard work is done for us.
+* **Point 2:** It's ultimately just terminal commands, though. You can probably do 99% of what you want to do with just a few commands.
+
+## What are those commands?
+
+**Remember:** GitHub Pages will host any page that ends up in our `/docs` folder.
+
+The most important commands for R users are:
+
+  * `mkdir folder_name`: Make a new folder called `folder_name`
+  * `cd folder_name`: Change current directory to `folder_name` (use `cd ../` to go up a folder level)
+  * `cp old_folder/file_name new_folder/file_name`: Copy the `file_name` from the `old_folder` to the `new_folder`
+  * `Rscript -e`: Execute a line of R code
+  * `quarto render proj_name --output-dir="docs"`: Render your Quarto file into the `docs` folder
+
+## Let's see an example!
+
+We're going to change the `link.svg` image
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+![](https://pkgdown.r-lib.org/link.svg)
+
+:::
+
+::: {.column width="50%"}
+
+![](link.svg)
+
+:::
+
+::::
+
+## How do we change it?
+
+* The file being used is located at `docs/link.svg`
+* The `docs` folder is in our `.gitignore`, though, so just changing the file will only work locally
+* **If we want it to work on GitHub Pages:** In our "workflow" file, we have to make a copy of this file!
+
+## Modifying the `.github/workflows/pkgdown.yaml` file
+
+We need to add this *after* the `pkgdown::build_site_github_pages()` function is called.
+
+```
+      - name: Override link.svg image with custom_link.svg image
+        run: cp docs/custom_link.svg docs/link.svg
+```
+
+## Vote: Which topic do you want to cover?
+
+* Quarto vignettes
+* Logo image in the navbar
+* Adding a dynamic test coverage badge
+* Custom domain for your GitHub Pages
+
+## Adding a Quarto vignette
+
+```{r}
+use_vignette(name = "tutorial.qmd", title = "Tutorial Title")
+```
+
+* `Build > Install > Clean and install`
+* Ensure Quarto is installed (including the `quarto` package in R)
+
+## Troubleshooting Quarto vignettes
+
+* If you use any packages that are not in your `DESCRIPTION` file, you must add it as a dependency in `.github/workflows/pkgdown.yaml`.
+
+```{r}
+#| code-line-numbers: "3"
+     - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::pkgdown, local::., reticulate
+          needs: website
+```
+
+:::{.callout-tip}
+
+## Tip
+
+If there is an error in your Quarto file (i.e., it does not render), the error message will only say `system command 'quarto' not found`. Quarto is probably installed, and you probably have a syntax error in your Quarto vignette.
+
+:::
+
+## Changing your navbar structure to account for your documentation
+
+You can type `Alt+0160` to add a blank character (`&nbsp;` will not work).
+
+```yaml
+navbar:
+  structure:
+    left: [vignettes, rd_files]
+    right: [search, github, my_linkedin, js_alert, lightswitch]
+  components:
+    vignettes:
+      text: " Vignettes"
+      icon: fa-book
+      menu:
+        - text: Examples
+        - text: "  Tutorial Title"
+          href: articles/my_vignette.html
+    rd_files:
+      text: " Function Documentation"
+      icon: fa-file
+      menu:
+        - text: All functions
+          href: reference/index.html
+        - text: "  Print things"
+        - text: "    Print Hello World"
+          href: reference/print_hello_world.html
+        - text: "    Print Hello R/Medicine"
+          href: reference/print_hello_rmedicine.html
+```
+
+## Adding a logo in your navbar
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+In the `pkgdown/extra.js` file (replace with your package name and URL):
+
+```js
+document.addEventListener("DOMContentLoaded", function () {
+  const brand = document.querySelector(".navbar-brand");
+  if (brand) {
+    const base = document.querySelector("base")?.href || "/";
+    brand.innerHTML = `
+      <img src="melissavanbussel.github.io/rmedicine/logo.png" height="30" style="vertical-align: middle; margin-right: 10px;">
+      <span style="vertical-align: middle;">rmedicine</span>
+    `;
+  }
+});
+```
+
+:::
+
+::: {.column width="50%"}
+
+In the `pkgdown/extra.scss` file (to add a hover effect):
+
+```
+.navbar-brand:hover {
+  color: var(--bs-secondary-color);
+}
+```
+
+:::
+
+::::
+
+## Customizing the sidebar
+
+You can add or remove any of the [default components](https://pkgdown.r-lib.org/reference/build_home.html?q=sidebar#sidebar):
+
+```yaml
+home:
+  sidebar:
+    structure: [links, authors]
+```
+
+## Customizing author appearance
+
+You can customize the information for each author, including by adding arbitrary HTML:
+
+```yaml
+authors:
+  Melissa Van Bussel:
+    href: https://melissavanbussel.com/
+    html: "<img src='https://images.squarespace-cdn.com/content/v1/615e5d6733744f26a45a0916/0005b0b1-e327-4965-89c0-3c38a167ac35/Melissa_VanBussel_2025.jpg?format=2500w' width=100 alt=''><br><span style=''>Melissa Van Bussel</span>"
+```
+
+## Creating custom sections in your sidebar
+
+```{r}
+#| code-line-numbers: "3,4,5,6"
+home:
+  sidebar:
+    structure: [badges, links, authors]
+    components:
+      badges:
+        title: Package badges
+        text: |
+          Placeholder text
+```
+
+## "Simple" badges
+
+Examples where shields.io will do the work for you:
+
+* Package version on GitHub: [https://shields.io/badges/git-hub-r-package-version](https://shields.io/badges/git-hub-r-package-version)
+* Workflow/pipeline status: [https://shields.io/badges/git-hub-actions-workflow-status](https://shields.io/badges/git-hub-actions-workflow-status)
+
+```yaml
+        text: |
+          ![](https://img.shields.io/github/r-package/v/melissavanbussel/rmedicine?label=rmedicine)<br>
+          ![](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)<br>
+```
+
+## Badges that require modifying your workflow file
+
+* You can create dynamic badges that contain anything you can think of
+* If you use shields.io, you can pull any field from a `.json` or `.yaml` file
+* We can modify the workflow to run arbitrary code, then save the results into a `.json` file or `.yaml` file
+* As long as we output the file to the `docs` folder, shields.io will be able to access it!
 
 ## Code coverage badge
 
-# BREAK?
+Let's add a test coverage badge: ![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmelissavanbussel.github.io%2Frmedicine%2Fcoverage.json&query=%24.coverage&label=test%20coverage)
 
-# Extra fancy stuff if time
+We need to:
 
-# Using a custom domain for GH Pages
+* Use `covr` to check our package coverage 
+* Output the results to a `.json` file in the `docs` folder
+* Create the badge using shields.io
+
+## Calculating the code coverage
+
+In the `_pkgdown.yml` file:
+
+```yaml
+      - name: Add test coverage badge
+        run: Rscript -e "jsonlite::write_json(list(coverage = sprintf('%.1f%%', covr::percent_coverage(covr::package_coverage()))), 'docs/coverage.json', auto_unbox = TRUE)"
+```
+
+We now need to add the `jsonlite`, `testthat`, and `covr` packages to our workflow's package installations.
+
+In the `.github/workflows/pkgdown.yaml` file:
+
+```{r}
+#| code-line-numbers: "3"
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::pkgdown, local::., reticulate, jsonlite, testthat, covr
+```
+
+## Creating the badge
+
+* Generate the badge here: [https://shields.io/badges/dynamic-json-badge](https://shields.io/badges/dynamic-json-badge)
+* My YouTube video has more details if you need!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fRILXeWTJYY?si=WoX2sl9aIvrVsJg9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Adding the badge to the sidebar
+
+```{r}
+#| code-line-numbers: "10"
+home:
+  sidebar:
+    structure: [badges, links, authors]
+    components:
+      badges:
+        title: Package badges
+        text: |
+          ![](https://img.shields.io/github/r-package/v/melissavanbussel/rmedicine?label=rmedicine)<br>
+          ![](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)<br>
+          ![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmelissavanbussel.github.io%2Frmedicine%2Fcoverage.json&query=%24.coverage&label=test%20coverage)<br>
+```
+
+# BREAK
+
+# Section 6: Extra fancy stuff
+
+## Using a custom domain for GH Pages
 
 # Putting Quarto or other stuff inside your pkgdown
 
