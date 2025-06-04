@@ -18,6 +18,7 @@ format:
     code-overflow: scroll
     code-line-numbers: true
     code-copy: true
+    menu: false
     lang: en
     footer: "[ggnot2.site/index.html](https://ggnot2.site/index.html)"
     slide-number: c/t
@@ -31,7 +32,13 @@ format:
 
 ## Where to access today's materials
 
+* The link in the footer ([ggnot2.site/index.html](https://ggnot2.site/index.html)) contains the `pkgdown` site we will be working towards building together
+* You can access the slides at [ggnot2.site/slides.html](https://ggnot2.site/slides.html), which are also embedded on the `pkgdown` site
+* You can access the GitHub repo by clicking the GitHub icon in the navbar, or by going to [github.com/melissavanbussel/rmedicine](https://www.github.com/melissavanbussel/rmedicine)
+
 ## How to participate
+
+* **Please participate!** This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone.
 
 ## By the end of this workshop, you will have...
 
@@ -48,9 +55,9 @@ format:
 * Participants should have prior experience with Git, but don’t need prior experience with `pkgdown` or GitHub Pages.
 * Participants should also have some basic familiarity with the structure of R packages (e.g., the `R/` folder and the `man/` folder).
 
-# Agenda/schedule for today
+## Agenda/schedule for today
 
-# Pre-workshop setup steps
+# Section 0: Pre-workshop setup steps
 
 ::: {.footer}
 
@@ -84,7 +91,7 @@ usethis::use_git_config(
 )
 ```
 
----
+## What you should see from running `git_sitrep()`
 
 * You should see `Vaccinated: TRUE`. If not: 
 
@@ -92,7 +99,7 @@ usethis::use_git_config(
 usethis::git_vaccinate()
 ```
 
----
+## What you should see from running `git_sitrep()`
 
 * You should see the username and email associated with your GitHub account, and you should see the word "discovered" beside the line that says "Personal access token". If not:
 
@@ -101,7 +108,7 @@ usethis::create_github_token()
 gitcreds::gitcreds_set()
 ```
 
-# Basic package creation
+# Section 1: Basic package creation
 
 ## Creating a new project
 
@@ -214,10 +221,6 @@ print_hello_rmedicine <- function(x) {
 
 ## We should probably add some tests, too
 
-::::: {.panel-tabset}
-
-## The `print_hello_world` function
-
 :::: {.columns}
 
 ::: {.column width="40%"}
@@ -249,7 +252,7 @@ test_that("print_hello_world prints hello world", {
 
 ::::
 
-## The `print_hello_rmedicine` function
+## Repeat for the `print_hello_rmedicine` function
 
 :::: {.columns}
 
@@ -282,33 +285,269 @@ test_that("print_hello_rmedicine prints hello rmedicine", {
 
 ::::
 
-:::::
+# Section 2: Getting things up onto GitHub Pages
 
-# Getting things up onto GitHub Pages
+## Always run `check()` before pushing to GitHub
 
-# Let's make things a little prettier
+We should see no errors, warnings, or notes!
 
-## Adding a logo and favicon
+```{r}
+check()
+```
+
+## Initialize the git repository
+
+This will create the `.git` folder, and populate the `.gitignore` file.
+
+```{r}
+use_git()
+```
+
+## Creating the repository on GitHub
+
+The `usethis` package makes this step very simple for us! 
+
+```{r}
+use_github()
+```
+
+## Publishing the `pkgdown` site using GitHub Pages
+
+Again, the `usethis` package makes this very easy to do! 
+
+```{r}
+use_pkgdown_github_pages()
+```
+
+## Making changes from here
+
+* Whenever we push to the `main` branch, our website will be automatically updated for us!
+* **Remember:** always `pull` before you `push`
+
+To preview changes locally:
+
+```{r}
+build_site()
+```
+
+# Section 3: Let's make things a little prettier
+
+## Creating a package logo
+
+:::: {.columns}
+
+::: {.column width="25%"}
+
+![](logo.png)
+
+:::
+
+::: {.column width="75%"}
+
+* If you don't already have a logo, the [hexmake](https://connect.thinkr.fr/hexmake/) Shiny app or the [hexSticker](https://github.com/GuangchuangYu/hexSticker) package are good choices
+* For today, you can use the image on the left, if you want! 
+
+:::
+
+::::
+
+## Adding the logo to your package
+
+You can run the `use_logo` function, which will automatically place the file in the right location within your package.
+
+```{r}
+use_logo("your/path/here.png")
+```
+
+## Creating favicons
+
+Without loading the `pkgdown` package, run
+
+```{r}
+pkgdown::build_favicons()
+```
 
 ## Adding a bootswatch theme
 
-## bslib variables: primary colour
+In the `_pkgdown.yaml` file, add a [bootswatch theme](https://bootswatch.com/):
 
-## bslib variables: custom fonts
+```{r}
+#| code-line-numbers: "5"
+url: https://melissavanbussel.github.io/rmedicine/
+template:
+  bootstrap: 5
+  bslib:
+    bootswatch: zephyr
+```
 
-## Adding a custom.scss file (where does it go?)
+:::{.callout-tip}
+
+## Tip
+
+There are a couple of bootswatch themes that are so new, they haven't been implemented in Quarto. Most of them should work, though!
+
+:::
+
+## Customizing appearance using `bslib` variables
+
+* Consult [this page](https://rstudio.github.io/bslib/articles/bs5-variables/index.html) to see a full list of options that you can change
+* To change the "primary colour" of your theme, for example:
+
+```{r}
+#| code-line-numbers: "6"
+url: https://melissavanbussel.github.io/rmedicine/
+template:
+  bootstrap: 5
+  bslib:
+    bootswatch: zephyr
+    primary: "#c70000"
+```
+
+## Changing the font using `bslib`
+
+* There are a few ways you can change the fonts, but using [Google fonts]() with `bslib` is the easiest!
+
+```{r}
+#| code-line-numbers: "7,8"
+url: https://melissavanbussel.github.io/rmedicine/
+template:
+  bootstrap: 5
+  bslib:
+    bootswatch: zephyr
+    primary: "#c70000"
+    base_font: {google: "Outfit"}
+    code_font: {google: "Fira Code"}
+```
+
+## Adding a custom.scss file
+
+* If you want to customize things further, create a file called `extra.scss` in the `pkgdown` folder
+* It will automatically be copied to the correct location by GitHub Actions
+
+```
+└── 📁 rmedicine/
+    └── 📁 pkgdown/
+        └── 📄 extra.scss
+```        
 
 ## Right clicking and inspecting
 
-* Change the colour of the search bar for one mode only
+Let's change the colour of the search bar! 
+
+* In Google Chrome: `Right click > Inspect`
+* The class is called `.form-control`
+
+```css
+.form-control {
+  background-color: #f4cccc;
+}
+```
 
 ## Adding a lightswitch
 
-## Changing stuff for both light and dark mode
+* We can enable a **dark mode** by setting `light-switch` to `true` in our `_pkgdown.yml` file:
 
-# Your package's function documentation
+```{r}
+#| code-line-numbers: "9"
+url: https://melissavanbussel.github.io/rmedicine/
+template:
+  bootstrap: 5
+  bslib:
+    bootswatch: zephyr
+    primary: "#c70000"
+    base_font: {google: "Outfit"}
+    code_font: {google: "Fira Code"}
+  light-switch: true
+```
 
-## The starts_with page
+## ...but what if we want different styles for light mode and dark mode?
+
+In our `extra.scss` file:
+
+```css
+[data-bs-theme="light"] .form-control {
+  background-color: #f4cccc;
+}
+
+[data-bs-theme="dark"] .form-control {
+  background-color: #40292C;
+}
+```
+
+## Syntax highlighting theme
+
+We can set a syntax highlighting theme for **light mode** and **dark mode**.
+
+```{r}
+#| code-line-numbers: "10,11"
+url: https://melissavanbussel.github.io/rmedicine/
+template:
+  bootstrap: 5
+  bslib:
+    bootswatch: zephyr
+    primary: "#c70000"
+    base_font: {google: "Outfit"}
+    code_font: {google: "Fira Code"}
+  light-switch: true
+  theme: atom-one-light
+  theme-dark: atom-one-dark
+```
+
+# BREAK
+
+# Section 4: Customizing our content
+
+## The default "reference" page
+
+* The "Reference" page is the page that lists all of the functions (and datasets) that are part of your package
+* By default, it puts the functions in **alphabetical order**
+* We can change that, though! Take a look at the [`pkgdown` documentation](https://pkgdown.r-lib.org/reference/index.html) for an example.
+
+## Reordering the contents of the reference page
+
+In the `_pkgdown.yml` file:
+
+* Create sections using `title`
+* Create descriptions using `desc`
+* List the pages using `contents`
+
+```yaml
+reference:
+  - title: Functions that print things
+    desc: These functions will all print things to your console.
+    contents:
+      - print_hello_world
+      - print_hello_rmedicine
+```
+
+## Shortcut: "Topic matching"
+
+You can use ["topic matching"](https://pkgdown.r-lib.org/reference/build_reference.html#topic-matching) as a shortcut:
+
+```{r}
+#| code-line-numbers: "5"
+reference:
+  - title: Functions that print things
+    desc: These functions will all print things to your console.
+    contents:
+      - starts_with("print_")
+```
+
+## Getting fancier with the reference page
+
+You can also use emojis, and create subsections!
+
+```yaml
+reference:
+  - title: ":pencil: Functions that print things"
+    desc: These functions will all print things to your console.
+  - subtitle: ":one: First subsection"
+    contents:
+      - print_hello_world
+  - subtitle: ":two: Second subsection"
+    contents:
+      - print_hello_rmedicine
+```
 
 # Basic navbar customization
 
@@ -357,3 +596,7 @@ test_that("print_hello_rmedicine prints hello rmedicine", {
 # Using a custom domain for GH Pages
 
 # Putting Quarto or other stuff inside your pkgdown
+
+# Feedback form
+
+# Contact information
