@@ -1,7 +1,6 @@
 ---
 title: "R package development with GitHub Pages and `pkgdown`"
 subtitle: "R/Medicine 2025"
-date: "06/09/2025"
 author: "Melissa Van Bussel"
 institute: "Senior Data Scientist, Statistics Canada"
 execute:
@@ -138,16 +137,152 @@ use_readme_md()
 ::: {.column width="40%"}
 
 ```{r}
-use_r("hello_world")
+use_r("print_hello_world")
 ```
 
 :::
 
-::: {.column width="60%"}
-Right column
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="55%"}
+
+```{r}
+#' Print hello world
+#'
+#' This function just prints hello world.
+#'
+#' @param x This argument does nothing.
+#'  If it did do something, it might require more words to explain.
+#'
+#' @return Prints `"Hello, world!"` to the console
+#'
+#' @examples
+#' print_hello_world(x = 1)
+#'
+#' @export
+print_hello_world <- function(x) {
+  print("Hello, world!")
+}
+```
+
 :::
 
 ::::
+
+## Let's add a second function
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+use_r("print_hello_rmedicine")
+```
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="55%"}
+
+```{r}
+#' Print hello R/Medicine
+#'
+#' This function just prints hello R/Medicine.
+#'
+#' @param x This argument does nothing.
+#'  If it did do something, it might require more words to explain.
+#'
+#' @return Prints `"Hello, R/Medicine"` to the console
+#'
+#' @examples
+#' print_hello_rmedicine(x = 1)
+#'
+#' @export
+print_hello_rmedicine <- function(x) {
+  print("Hello, R/Medicine!")
+}
+```
+
+:::
+
+::::
+
+## We should probably add some tests, too
+
+::::: {.panel-tabset}
+
+## The `print_hello_world` function
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+# install.packages("testthat")
+library(testthat)
+use_test("print_hello_world")
+```
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="55%"}
+
+```{r}
+test_that("print_hello_world prints hello world", {
+  expect_equal(
+    print_hello_world(x = "test"),
+    "Hello, world!"
+  )
+})
+```
+
+:::
+
+::::
+
+## The `print_hello_rmedicine` function
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+# install.packages("testthat")
+library(testthat)
+use_test("print_hello_rmedicine")
+```
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="55%"}
+
+```{r}
+test_that("print_hello_rmedicine prints hello rmedicine", {
+  expect_equal(
+    print_hello_rmedicine(x = "test"),
+    "Hello, R/Medicine!"
+  )
+})
+```
+
+:::
+
+::::
+
+:::::
 
 # Getting things up onto GitHub Pages
 
