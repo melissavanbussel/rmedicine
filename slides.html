@@ -214,9 +214,17 @@ Melissa Van Bussel
 </section>
 <section id="where-to-access-todays-materials" class="slide level2">
 <h2>Where to access today’s materials</h2>
+<ul>
+<li>The link in the footer (<a href="https://ggnot2.site/index.html">ggnot2.site/index.html</a>) contains the <code>pkgdown</code> site we will be working towards building together</li>
+<li>You can access the slides at <a href="https://ggnot2.site/slides.html">ggnot2.site/slides.html</a>, which are also embedded on the <code>pkgdown</code> site</li>
+<li>You can access the GitHub repo by clicking the GitHub icon in the navbar, or by going to <a href="https://www.github.com/melissavanbussel/rmedicine">github.com/melissavanbussel/rmedicine</a></li>
+</ul>
 </section>
 <section id="how-to-participate" class="slide level2">
 <h2>How to participate</h2>
+<ul>
+<li><strong>Please participate!</strong> This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone.</li>
+</ul>
 </section>
 <section id="by-the-end-of-this-workshop-you-will-have" class="slide level2">
 <h2>By the end of this workshop, you will have…</h2>
@@ -237,15 +245,13 @@ Melissa Van Bussel
 <li>Participants should have prior experience with Git, but don’t need prior experience with <code>pkgdown</code> or GitHub Pages.</li>
 <li>Participants should also have some basic familiarity with the structure of R packages (e.g., the <code>R/</code> folder and the <code>man/</code> folder).</li>
 </ul>
-</section></section>
-<section id="agendaschedule-for-today" class="title-slide slide level1 center">
-<h1>Agenda/schedule for today</h1>
-
 </section>
-
+<section id="agendaschedule-for-today" class="slide level2">
+<h2>Agenda/schedule for today</h2>
+</section></section>
 <section>
-<section id="pre-workshop-setup-steps" class="title-slide slide level1 center">
-<h1>Pre-workshop setup steps</h1>
+<section id="section-0-pre-workshop-setup-steps" class="title-slide slide level1 center">
+<h1>Section 0: Pre-workshop setup steps</h1>
 <div class="footer">
 <p><a href="https://rconsortium.github.io/RMedicine_website/files/R%20package%20development%20with%20GitHub%20Pages%20and%20pkgdown.pdf">Click here for the PDF version</a></p>
 </div>
@@ -280,8 +286,8 @@ Melissa Van Bussel
 <span id="cb1-4"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="what-you-should-see-from-running-git_sitrep-1" class="slide level2">
+<h2>What you should see from running <code>git_sitrep()</code></h2>
 <ul>
 <li>You should see <code>Vaccinated: TRUE</code>. If not:</li>
 </ul>
@@ -289,8 +295,8 @@ Melissa Van Bussel
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="what-you-should-see-from-running-git_sitrep-2" class="slide level2">
+<h2>What you should see from running <code>git_sitrep()</code></h2>
 <ul>
 <li>You should see the username and email associated with your GitHub account, and you should see the word “discovered” beside the line that says “Personal access token”. If not:</li>
 </ul>
@@ -300,8 +306,8 @@ Melissa Van Bussel
 </div>
 </section></section>
 <section>
-<section id="basic-package-creation" class="title-slide slide level1 center">
-<h1>Basic package creation</h1>
+<section id="section-1-basic-package-creation" class="title-slide slide level1 center">
+<h1>Section 1: Basic package creation</h1>
 
 </section>
 <section id="creating-a-new-project" class="slide level2">
@@ -392,10 +398,6 @@ Melissa Van Bussel
 </section>
 <section id="we-should-probably-add-some-tests-too" class="slide level2">
 <h2>We should probably add some tests, too</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">The <code>print_hello_world</code> function</a></li><li><a href="#tabset-1-2">The <code>print_hello_rmedicine</code> function</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
@@ -415,8 +417,9 @@ Melissa Van Bussel
 <span id="cb12-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
-</div>
-<div id="tabset-1-2">
+</section>
+<section id="repeat-for-the-print_hello_rmedicine-function" class="slide level2">
+<h2>Repeat for the <code>print_hello_rmedicine</code> function</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
@@ -436,54 +439,259 @@ Melissa Van Bussel
 <span id="cb14-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
+</section></section>
+<section>
+<section id="section-2-getting-things-up-onto-github-pages" class="title-slide slide level1 center">
+<h1>Section 2: Getting things up onto GitHub Pages</h1>
+
+</section>
+<section id="always-run-check-before-pushing-to-github" class="slide level2">
+<h2>Always run <code>check()</code> before pushing to GitHub</h2>
+<p>We should see no errors, warnings, or notes!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">check</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="initialize-the-git-repository" class="slide level2">
+<h2>Initialize the git repository</h2>
+<p>This will create the <code>.git</code> folder, and populate the <code>.gitignore</code> file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">use_git</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="creating-the-repository-on-github" class="slide level2">
+<h2>Creating the repository on GitHub</h2>
+<p>The <code>usethis</code> package makes this step very simple for us!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">use_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="publishing-the-pkgdown-site-using-github-pages" class="slide level2">
+<h2>Publishing the <code>pkgdown</code> site using GitHub Pages</h2>
+<p>Again, the <code>usethis</code> package makes this very easy to do!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">use_pkgdown_github_pages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="making-changes-from-here" class="slide level2">
+<h2>Making changes from here</h2>
+<ul>
+<li>Whenever we push to the <code>main</code> branch, our website will be automatically updated for us!</li>
+<li><strong>Remember:</strong> always <code>pull</code> before you <code>push</code></li>
+</ul>
+<p>To preview changes locally:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">build_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
-<section id="getting-things-up-onto-github-pages" class="title-slide slide level1 center">
-<h1>Getting things up onto GitHub Pages</h1>
-
-</section>
-
 <section>
-<section id="lets-make-things-a-little-prettier" class="title-slide slide level1 center">
-<h1>Let’s make things a little prettier</h1>
+<section id="section-3-lets-make-things-a-little-prettier" class="title-slide slide level1 center">
+<h1>Section 3: Let’s make things a little prettier</h1>
 
 </section>
-<section id="adding-a-logo-and-favicon" class="slide level2">
-<h2>Adding a logo and favicon</h2>
+<section id="creating-a-package-logo" class="slide level2">
+<h2>Creating a package logo</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><img data-src="logo.png"></p>
+</div><div class="column" style="width:75%;">
+<ul>
+<li>If you don’t already have a logo, the <a href="https://connect.thinkr.fr/hexmake/">hexmake</a> Shiny app or the <a href="https://github.com/GuangchuangYu/hexSticker">hexSticker</a> package are good choices</li>
+<li>For today, you can use the image on the left, if you want!</li>
+</ul>
+</div></div>
+</section>
+<section id="adding-the-logo-to-your-package" class="slide level2">
+<h2>Adding the logo to your package</h2>
+<p>You can run the <code>use_logo</code> function, which will automatically place the file in the right location within your package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">use_logo</span>(<span class="st">"your/path/here.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-favicons" class="slide level2">
+<h2>Creating favicons</h2>
+<p>Without loading the <code>pkgdown</code> package, run</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>pkgdown<span class="sc">::</span><span class="fu">build_favicons</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="adding-a-bootswatch-theme" class="slide level2">
 <h2>Adding a bootswatch theme</h2>
+<p>In the <code>_pkgdown.yaml</code> file, add a <a href="https://bootswatch.com/">bootswatch theme</a>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb22-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb22-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb22-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb22-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>There are a couple of bootswatch themes that are so new, they haven’t been implemented in Quarto. Most of them should work, though!</p>
+</div>
+</div>
+</div>
 </section>
-<section id="bslib-variables-primary-colour" class="slide level2">
-<h2>bslib variables: primary colour</h2>
+<section id="customizing-appearance-using-bslib-variables" class="slide level2">
+<h2>Customizing appearance using <code>bslib</code> variables</h2>
+<ul>
+<li>Consult <a href="https://rstudio.github.io/bslib/articles/bs5-variables/index.html">this page</a> to see a full list of options that you can change</li>
+<li>To change the “primary colour” of your theme, for example:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb23-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb23-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb23-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb23-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb23-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="bslib-variables-custom-fonts" class="slide level2">
-<h2>bslib variables: custom fonts</h2>
+<section id="changing-the-font-using-bslib" class="slide level2">
+<h2>Changing the font using <code>bslib</code></h2>
+<ul>
+<li>There are a few ways you can change the fonts, but using <a href="">Google fonts</a> with <code>bslib</code> is the easiest!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb24-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb24-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb24-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb24-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb24-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
+<span id="cb24-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
+<span id="cb24-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="adding-a-custom.scss-file-where-does-it-go" class="slide level2">
-<h2>Adding a custom.scss file (where does it go?)</h2>
+<section id="adding-a-custom.scss-file" class="slide level2">
+<h2>Adding a custom.scss file</h2>
+<ul>
+<li>If you want to customize things further, create a file called <code>extra.scss</code> in the <code>pkgdown</code> folder</li>
+<li>It will automatically be copied to the correct location by GitHub Actions</li>
+</ul>
+<pre><code>└── 📁 rmedicine/
+    └── 📁 pkgdown/
+        └── 📄 extra.scss</code></pre>
 </section>
 <section id="right-clicking-and-inspecting" class="slide level2">
 <h2>Right clicking and inspecting</h2>
+<p>Let’s change the colour of the search bar!</p>
 <ul>
-<li>Change the colour of the search bar for one mode only</li>
+<li>In Google Chrome: <code>Right click &gt; Inspect</code></li>
+<li>The class is called <code>.form-control</code></li>
 </ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb26-1"><a href=""></a><span class="fu">.form-control</span> {</span>
+<span id="cb26-2"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f4cccc</span><span class="op">;</span></span>
+<span id="cb26-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="adding-a-lightswitch" class="slide level2">
 <h2>Adding a lightswitch</h2>
+<ul>
+<li>We can enable a <strong>dark mode</strong> by setting <code>light-switch</code> to <code>true</code> in our <code>_pkgdown.yml</code> file:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb27-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb27-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb27-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb27-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb27-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
+<span id="cb27-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
+<span id="cb27-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span>
+<span id="cb27-9"><a href=""></a>  light<span class="sc">-</span><span class="cf">switch</span><span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="changing-stuff-for-both-light-and-dark-mode" class="slide level2">
-<h2>Changing stuff for both light and dark mode</h2>
+<section id="but-what-if-we-want-different-styles-for-light-mode-and-dark-mode" class="slide level2">
+<h2>…but what if we want different styles for light mode and dark mode?</h2>
+<p>In our <code>extra.scss</code> file:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb28-1"><a href=""></a><span class="ex">[</span><span class="ss">data-bs-theme</span><span class="op">=</span><span class="st">"light"</span><span class="ex">]</span> <span class="fu">.form-control</span> {</span>
+<span id="cb28-2"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f4cccc</span><span class="op">;</span></span>
+<span id="cb28-3"><a href=""></a>}</span>
+<span id="cb28-4"><a href=""></a></span>
+<span id="cb28-5"><a href=""></a><span class="ex">[</span><span class="ss">data-bs-theme</span><span class="op">=</span><span class="st">"dark"</span><span class="ex">]</span> <span class="fu">.form-control</span> {</span>
+<span id="cb28-6"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#40292C</span><span class="op">;</span></span>
+<span id="cb28-7"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="syntax-highlighting-theme" class="slide level2">
+<h2>Syntax highlighting theme</h2>
+<p>We can set a syntax highlighting theme for <strong>light mode</strong> and <strong>dark mode</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29" data-code-line-numbers="10,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb29-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb29-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb29-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb29-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb29-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
+<span id="cb29-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
+<span id="cb29-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span>
+<span id="cb29-9"><a href=""></a>  light<span class="sc">-</span><span class="cf">switch</span><span class="sc">:</span> true</span>
+<span id="cb29-10"><a href=""></a>  theme<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>light</span>
+<span id="cb29-11"><a href=""></a>  theme<span class="sc">-</span>dark<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>dark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section>
-<section>
-<section id="your-packages-function-documentation" class="title-slide slide level1 center">
-<h1>Your package’s function documentation</h1>
+<section id="break" class="title-slide slide level1 center">
+<h1>BREAK</h1>
 
 </section>
-<section id="the-starts_with-page" class="slide level2">
-<h2>The starts_with page</h2>
+
+<section>
+<section id="section-4-customizing-our-content" class="title-slide slide level1 center">
+<h1>Section 4: Customizing our content</h1>
+
+</section>
+<section id="the-default-reference-page" class="slide level2">
+<h2>The default “reference” page</h2>
+<ul>
+<li>The “Reference” page is the page that lists all of the functions (and datasets) that are part of your package</li>
+<li>By default, it puts the functions in <strong>alphabetical order</strong></li>
+<li>We can change that, though! Take a look at the <a href="https://pkgdown.r-lib.org/reference/index.html"><code>pkgdown</code> documentation</a> for an example.</li>
+</ul>
+</section>
+<section id="reordering-the-contents-of-the-reference-page" class="slide level2">
+<h2>Reordering the contents of the reference page</h2>
+<p>In the <code>_pkgdown.yml</code> file:</p>
+<ul>
+<li>Create sections using <code>title</code></li>
+<li>Create descriptions using <code>desc</code></li>
+<li>List the pages using <code>contents</code></li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href=""></a><span class="fu">reference</span><span class="kw">:</span></span>
+<span id="cb30-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Functions that print things</span></span>
+<span id="cb30-3"><a href=""></a><span class="at">    </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions will all print things to your console.</span></span>
+<span id="cb30-4"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb30-5"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_world</span></span>
+<span id="cb30-6"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="shortcut-topic-matching" class="slide level2">
+<h2>Shortcut: “Topic matching”</h2>
+<p>You can use <a href="https://pkgdown.r-lib.org/reference/build_reference.html#topic-matching">“topic matching”</a> as a shortcut:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>reference<span class="sc">:</span></span>
+<span id="cb31-2"><a href=""></a>  <span class="sc">-</span> title<span class="sc">:</span> Functions that print things</span>
+<span id="cb31-3"><a href=""></a>    desc<span class="sc">:</span> These functions will all print things to your console.</span>
+<span id="cb31-4"><a href=""></a>    contents<span class="sc">:</span></span>
+<span id="cb31-5"><a href=""></a>      <span class="sc">-</span> <span class="fu">starts_with</span>(<span class="st">"print_"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="getting-fancier-with-the-reference-page" class="slide level2">
+<h2>Getting fancier with the reference page</h2>
+<p>You can also use emojis, and create subsections!</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href=""></a><span class="fu">reference</span><span class="kw">:</span></span>
+<span id="cb32-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">":pencil: Functions that print things"</span></span>
+<span id="cb32-3"><a href=""></a><span class="at">    </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions will all print things to your console.</span></span>
+<span id="cb32-4"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":one: First subsection"</span></span>
+<span id="cb32-5"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb32-6"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_world</span></span>
+<span id="cb32-7"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":two: Second subsection"</span></span>
+<span id="cb32-8"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb32-9"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="basic-navbar-customization" class="title-slide slide level1 center">
@@ -512,7 +720,7 @@ Melissa Van Bussel
 <section id="adding-the-canvas-confetti" class="slide level2">
 <h2>Adding the canvas confetti</h2>
 </section></section>
-<section id="break" class="title-slide slide level1 center">
+<section id="break-1" class="title-slide slide level1 center">
 <h1>BREAK</h1>
 
 </section>
@@ -569,7 +777,7 @@ Melissa Van Bussel
 <section id="code-coverage-badge" class="slide level2">
 <h2>Code coverage badge</h2>
 </section></section>
-<section id="break-1" class="title-slide slide level1 center">
+<section id="break-2" class="title-slide slide level1 center">
 <h1>BREAK?</h1>
 
 </section>
@@ -586,6 +794,16 @@ Melissa Van Bussel
 
 <section id="putting-quarto-or-other-stuff-inside-your-pkgdown" class="title-slide slide level1 center">
 <h1>Putting Quarto or other stuff inside your pkgdown</h1>
+
+</section>
+
+<section id="feedback-form" class="title-slide slide level1 center">
+<h1>Feedback form</h1>
+
+</section>
+
+<section id="contact-information" class="title-slide slide level1 center">
+<h1>Contact information</h1>
 
 </section>
     </div>
@@ -623,7 +841,7 @@ Melissa Van Bussel
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'smaller': false,
  
         // Display controls in the bottom right corner
