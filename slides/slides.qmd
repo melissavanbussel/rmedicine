@@ -18,9 +18,10 @@ format:
     code-overflow: scroll
     code-line-numbers: true
     code-copy: true
+    code-block-height: 500px
     menu: false
     lang: en
-    footer: "[ggnot2.site/index.html](https://ggnot2.site/index.html)"
+    footer: "[ggnot2.site](https://ggnot2.site/index.html)"
     slide-number: c/t
     include-after-body: clean_title_page.html
     include-in-header:
@@ -549,19 +550,131 @@ reference:
       - print_hello_rmedicine
 ```
 
-# Basic navbar customization
+## Customizing navbar contents
 
-## Add search, github, my_linkedin, and lightswitch components
+* There are some built-in options for the navbar, such as `search`, `github` and `lightswitch`
 
-## Add the font-awesome icons
+```
+navbar:
+  structure:
+    right: [search, github, lightswitch]
+```
 
-# Basic footer customization
+## Components 
 
-# Adding javascript or other things
+* You can create custom buttons in the navbar using **components**
+* Use [fontawesome icons](https://fontawesome.com/search?ic=free) to customize the button appearance
 
-## Adding the js_alert
+```{r}
+#| code-line-numbers: "3-8"
+navbar:
+  structure:
+    right: [search, github, my_linkedin, lightswitch]
+  components:
+    my_linkedin:
+      icon: fa-linkedin
+      href: https://www.linkedin.com/in/melissavanbussel/
+      aria-label: LinkedIn
+```
 
-## Adding the canvas confetti
+## Customizing footer contents
+
+* The footer works **very** similarly to the navbar
+* It's markdown, so you can include almost anything you want!
+
+```yaml
+footer:
+  structure:
+    left: developed_by
+    right: built_with_pkgdown
+  components:
+    developed_by: "Developed by [Melissa Van Bussel](https://melissavanbussel.com/) :computer: for the [R/Medicine 2025 Conference](https://rconsortium.github.io/RMedicine_website/)."
+    built_with_pkgdown: "This site was built using [pkgdown](https://pkgdown.r-lib.org/)!&nbsp;&nbsp;<img src='https://pkgdown.r-lib.org/logo.png' alt='pkgdown logo' width='25'>"
+```
+
+## Adding JavaScript
+
+* Earlier, we saw the `extra.scss` file
+* `pkgdown` also automatically recognizes the `pkgdown/extra.js` file
+
+```
+└── 📁 rmedicine/
+    └── 📁 pkgdown/
+        └── 📄 extra.scss
+        └── 📄 extra.js
+```   
+
+## Let's see it in action
+
+* We'll add an additional component to our navbar called `#js_alert#`
+* When the button is clicked, a pop-up message will appear
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-line-numbers: "9-12"
+navbar:
+  structure:
+    right: [search, github, my_linkedin, lightswitch]
+  components:
+    my_linkedin:
+      icon: fa-linkedin
+      href: https://www.linkedin.com/in/melissavanbussel/
+      aria-label: LinkedIn
+   js_alert:
+      icon: fa-code
+      href: "#js_alert#"
+      aria-label: JavaScript
+```
+
+:::
+
+::: {.column width="50%"}
+
+```js
+document.addEventListener("DOMContentLoaded", function() {
+  let javascriptAlert = document.querySelectorAll(".nav-link[href*='#js_alert#']");
+  javascriptAlert.forEach(function (jsAlert) {
+    jsAlert.addEventListener("click", function(event) {
+      event.preventDefault();
+      alert("JavaScript is working!");
+    });
+  });
+});
+```
+
+:::
+
+::::
+
+## Can you add more files?
+
+Yes! You can insert [additional HTML etc.](https://pkgdown.r-lib.org/articles/customise.html#additional-html-and-files)
+
+For example, we can add additional javascript using `after_body` in the `_pkgdown.yml` file:
+
+```yaml
+template:
+  includes:
+    after_body: |
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          document.addEventListener("click", function (e) {
+            if (typeof confetti === "function") {
+              const x = e.clientX / window.innerWidth;
+              const y = e.clientY / window.innerHeight;
+
+              confetti({
+                origin: { x: x, y: y }
+              });
+            }
+          });
+        });
+      </script>
+```
 
 # BREAK
 
