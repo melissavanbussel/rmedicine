@@ -9,3 +9,6 @@
 ^vignettes/*_files$
 logo.png
 ^slides$
+^rmedicine\.Rcheck$
+^rmedicine.*\.tar\.gz$
+^rmedicine.*\.tgz$
