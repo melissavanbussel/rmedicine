@@ -208,22 +208,26 @@ Melissa Van Bussel
 
 </section>
 <section>
-<section id="housekeeping-and-preamble" class="title-slide slide level1 center">
-<h1>Housekeeping and preamble</h1>
+<section id="housekeeping" class="title-slide slide level1 center">
+<h1>Housekeeping 🧹</h1>
 
 </section>
 <section id="where-to-access-todays-materials" class="slide level2">
 <h2>Where to access today’s materials</h2>
+<div class="smaller">
 <ul>
 <li>The link in the footer (<a href="https://ggnot2.site/index.html">ggnot2.site</a>) contains the <code>pkgdown</code> site we will be working towards building together</li>
 <li>You can access the slides at <a href="https://ggnot2.site/slides.html">ggnot2.site/slides.html</a>, which are also embedded on the <code>pkgdown</code> site</li>
 <li>You can access the GitHub repo by clicking the GitHub icon in the navbar, or by going to <a href="https://www.github.com/melissavanbussel/rmedicine">github.com/melissavanbussel/rmedicine</a></li>
 </ul>
+</div>
 </section>
 <section id="how-to-participate" class="slide level2">
 <h2>How to participate</h2>
 <ul>
-<li><strong>Please participate!</strong> This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone.</li>
+<li><strong>Please participate!</strong> This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone. ☺️</li>
+<li><strong>Ask questions</strong> ❓if you have them</li>
+<li><strong>Use the polls</strong>, it’ll help me figure readjust pacing and topics in real-time. 🗳️</li>
 </ul>
 </section>
 <section id="by-the-end-of-this-workshop-you-will-have" class="slide level2">
@@ -245,9 +249,46 @@ Melissa Van Bussel
 <li>Participants should have prior experience with Git, but don’t need prior experience with <code>pkgdown</code> or GitHub Pages.</li>
 <li>Participants should also have some basic familiarity with the structure of R packages (e.g., the <code>R/</code> folder and the <code>man/</code> folder).</li>
 </ul>
+</section></section>
+<section>
+<section id="schedule-for-today" class="title-slide slide level1 center">
+<h1>Schedule for today</h1>
+
 </section>
-<section id="agendaschedule-for-today" class="slide level2">
-<h2>Agenda/schedule for today</h2>
+<section id="part-1-getting-started" class="slide level2">
+<h2>Part 1: Getting started</h2>
+<ul>
+<li>Setup steps (installations + configurations)</li>
+<li>Basic package creation</li>
+<li>Getting things onto GitHub Pages</li>
+</ul>
+<p><em>break</em></p>
+</section>
+<section id="part-2-making-your-site-yours" class="slide level2">
+<h2>Part 2: Making your site <em>yours</em></h2>
+<ul>
+<li>Styling</li>
+<li>Customizing content (navbar, footer, <code>reference</code> page)</li>
+<li>Adding JavaScript</li>
+</ul>
+<p><em>break</em></p>
+</section>
+<section id="part-3-mastering-github-pages" class="slide level2">
+<h2>Part 3: Mastering GitHub Pages</h2>
+<ul>
+<li>How GitHub Actions works</li>
+<li>Quarto vignettes</li>
+<li>Further customization: logo in navbar, sidebar content</li>
+</ul>
+<p><em>break</em></p>
+</section>
+<section id="bonus-topics-if-theres-time" class="slide level2">
+<h2>BONUS topics (if there’s time)</h2>
+<ul>
+<li>Adding a custom domain to your GitHub Pages</li>
+<li>Adding Quarto pages inside your <code>pkgdown</code> site</li>
+</ul>
+<p><em>the end</em></p>
 </section></section>
 <section>
 <section id="section-0-pre-workshop-setup-steps" class="title-slide slide level1 center">
@@ -324,20 +365,25 @@ Melissa Van Bussel
 </section>
 <section id="the-description-file" class="slide level2">
 <h2>The <code>DESCRIPTION</code> file</h2>
+<p><br></p>
 <p>Run</p>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">use_mit_license</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
 <p>then update the <code>Authors@R</code> field and change the version number to something a little less long.</p>
 </section>
 <section id="creating-a-readme.md-file" class="slide level2">
 <h2>Creating a <code>README.md</code> file</h2>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">use_readme_md</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="making-our-first-r-function" class="slide level2">
 <h2>Making our first R function</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
@@ -368,6 +414,7 @@ Melissa Van Bussel
 </section>
 <section id="lets-add-a-second-function" class="slide level2">
 <h2>Let’s add a second function</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
@@ -398,6 +445,7 @@ Melissa Van Bussel
 </section>
 <section id="we-should-probably-add-some-tests-too" class="slide level2">
 <h2>We should probably add some tests, too</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
@@ -420,6 +468,7 @@ Melissa Van Bussel
 </section>
 <section id="repeat-for-the-print_hello_rmedicine-function" class="slide level2">
 <h2>Repeat for the <code>print_hello_rmedicine</code> function</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
