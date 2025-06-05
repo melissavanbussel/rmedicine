@@ -215,7 +215,7 @@ Melissa Van Bussel
 <section id="where-to-access-todays-materials" class="slide level2">
 <h2>Where to access today’s materials</h2>
 <ul>
-<li>The link in the footer (<a href="https://ggnot2.site/index.html">ggnot2.site/index.html</a>) contains the <code>pkgdown</code> site we will be working towards building together</li>
+<li>The link in the footer (<a href="https://ggnot2.site/index.html">ggnot2.site</a>) contains the <code>pkgdown</code> site we will be working towards building together</li>
 <li>You can access the slides at <a href="https://ggnot2.site/slides.html">ggnot2.site/slides.html</a>, which are also embedded on the <code>pkgdown</code> site</li>
 <li>You can access the GitHub repo by clicking the GitHub icon in the navbar, or by going to <a href="https://www.github.com/melissavanbussel/rmedicine">github.com/melissavanbussel/rmedicine</a></li>
 </ul>
@@ -811,12 +811,17 @@ Melissa Van Bussel
 <h1>Section 5: Stuff that requires a deeper understanding of GitHub Pages</h1>
 
 </section>
-<section id="eli5-eli15-how-does-github-pages-actually-work" class="slide level2">
-<h2><sub>ELI5</sub> ELI15: How does GitHub Pages actually work*?</h2>
+<section id="how-does-github-pages-actually-work" class="slide level2">
+<h2>How does GitHub Pages actually work*?</h2>
 <p>(* = in our current, very specific scenario)</p>
 <ul>
 <li>When you push to <code>main</code>, the terminal commands in the <code>.github/workflows/pkgdown.yaml</code> file are run on a virtual machine</li>
 <li>This file defines the <strong>“workflow”</strong> (pipeline)</li>
+</ul>
+</section>
+<section id="what-happens-in-a-workflow" class="slide level2">
+<h2>What happens in a “workflow”?</h2>
+<ul>
 <li>The commands tell GitHub to:
 <ul>
 <li>Install stuff: R, pandoc, our R packages…</li>
