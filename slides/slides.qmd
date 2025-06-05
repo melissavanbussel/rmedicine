@@ -1056,7 +1056,12 @@ If your custom domain has a different depth than your GitHub Pages URL, you may 
 
 Any questions?
 
-* ![](https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg) [melissavanbussel.com](https://www.melissavanbussel.com){width="50px"}
-* 🌐 [@melissavanbussel](https://www.linkedin.com/in/melissavanbussel/)
-* ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png){width="50px"} [@melissavanbussel](https://www.github.com/melissavanbussel)
-* ![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png?20240107144800){width="50px"} [@ggnot2](https://www.youtube.com/c/ggnot2)
+<br>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" style="width:50px; vertical-align: middle;"> [melissavanbussel.com](https://www.melissavanbussel.com)
+
+🌐 [@melissavanbussel](https://www.linkedin.com/in/melissavanbussel/)
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" style="width:50px; vertical-align: middle;"> [@melissavanbussel](https://www.github.com/melissavanbussel)
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png?20240107144800" style="width:50px; vertical-align: middle;"> [@ggnot2](https://www.youtube.com/c/ggnot2)
