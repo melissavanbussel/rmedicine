@@ -37,10 +37,10 @@ $code-block-bg: $tertiary-color;
 }
 
 .reveal code {
-  background-color: #D9F1F0 !important;
+  background-color: #D9F1F0;
 }
 
-.reveal code.sourceCode {
+.reveal code.sourceCode, .reveal pre code {
   background-color: #2B2B2B !important;
 }
 
