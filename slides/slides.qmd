@@ -33,7 +33,7 @@ format:
 
 ## Where to access today's materials
 
-* The link in the footer ([ggnot2.site/index.html](https://ggnot2.site/index.html)) contains the `pkgdown` site we will be working towards building together
+* The link in the footer ([ggnot2.site](https://ggnot2.site/index.html)) contains the `pkgdown` site we will be working towards building together
 * You can access the slides at [ggnot2.site/slides.html](https://ggnot2.site/slides.html), which are also embedded on the `pkgdown` site
 * You can access the GitHub repo by clicking the GitHub icon in the navbar, or by going to [github.com/melissavanbussel/rmedicine](https://www.github.com/melissavanbussel/rmedicine)
 
@@ -680,12 +680,15 @@ template:
 
 # Section 5: Stuff that requires a deeper understanding of GitHub Pages
 
-## ~ELI5~ ELI15: How does GitHub Pages actually work*?
+## How does GitHub Pages actually work*?
 
 (* = in our current, very specific scenario)
 
 * When you push to `main`, the terminal commands in the `.github/workflows/pkgdown.yaml` file are run on a virtual machine
 * This file defines the **"workflow"** (pipeline)
+
+## What happens in a "workflow"?
+
 * The commands tell GitHub to:
   * Install stuff: R, pandoc, our R packages...
   * Build the site (`pkgdown::build_site_github_pages()`)
