@@ -29,17 +29,23 @@ format:
               <link rel="icon" type="image/png" href="logo.png">
 ---
 
-# Housekeeping and preamble
+# Housekeeping 🧹
 
 ## Where to access today's materials
+
+::: {.smaller}
 
 * The link in the footer ([ggnot2.site](https://ggnot2.site/index.html)) contains the `pkgdown` site we will be working towards building together
 * You can access the slides at [ggnot2.site/slides.html](https://ggnot2.site/slides.html), which are also embedded on the `pkgdown` site
 * You can access the GitHub repo by clicking the GitHub icon in the navbar, or by going to [github.com/melissavanbussel/rmedicine](https://www.github.com/melissavanbussel/rmedicine)
 
+:::
+
 ## How to participate
 
-* **Please participate!** This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone.
+* **Please participate!** This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone. ☺️
+* **Ask questions** ❓if you have them
+* **Use the polls**, it'll help me figure readjust pacing and topics in real-time. 🗳️
 
 ## By the end of this workshop, you will have...
 
@@ -56,7 +62,38 @@ format:
 * Participants should have prior experience with Git, but don’t need prior experience with `pkgdown` or GitHub Pages.
 * Participants should also have some basic familiarity with the structure of R packages (e.g., the `R/` folder and the `man/` folder).
 
-## Agenda/schedule for today
+# Schedule for today
+
+## Part 1: Getting started
+
+* Setup steps (installations + configurations)
+* Basic package creation
+* Getting things onto GitHub Pages
+
+*break*
+
+## Part 2: Making your site *yours*
+
+* Styling
+* Customizing content (navbar, footer, `reference` page)
+* Adding JavaScript
+
+*break*
+
+## Part 3: Mastering GitHub Pages
+
+* How GitHub Actions works
+* Quarto vignettes
+* Further customization: logo in navbar, sidebar content
+
+*break*
+
+## BONUS topics (if there's time)
+
+* Adding a custom domain to your GitHub Pages
+* Adding Quarto pages inside your `pkgdown` site
+
+*the end*
 
 # Section 0: Pre-workshop setup steps
 
@@ -124,21 +161,31 @@ library(pkgdown)
 
 ## The `DESCRIPTION` file
 
+<br>
+
 Run 
+
+<br>
 
 ```{r}
 use_mit_license()
 ```
 
+<br>
+
 then update the `Authors@R` field and change the version number to something a little less long.
 
 ## Creating a `README.md` file
+
+<br>
 
 ```{r}
 use_readme_md()
 ```
 
 ## Making our first R function
+
+<br>
 
 :::: {.columns}
 
@@ -181,6 +228,8 @@ print_hello_world <- function(x) {
 
 ## Let's add a second function
 
+<br>
+
 :::: {.columns}
 
 ::: {.column width="40%"}
@@ -222,6 +271,8 @@ print_hello_rmedicine <- function(x) {
 
 ## We should probably add some tests, too
 
+<br>
+
 :::: {.columns}
 
 ::: {.column width="40%"}
@@ -254,6 +305,8 @@ test_that("print_hello_world prints hello world", {
 ::::
 
 ## Repeat for the `print_hello_rmedicine` function
+
+<br>
 
 :::: {.columns}
 
