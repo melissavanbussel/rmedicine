@@ -13,8 +13,8 @@ $presentation-heading-color: $secondary-color;
 $body-color: $primary-color;
 $link-color: #3A70B0;
 // $selected-text-color: $secondary-color;
-$code-color: $accent-color;
-// $code-block-bg: $tertiary-color;
+$code-color: #245656;
+$code-block-bg: $tertiary-color;
 
 /*-- scss:rules --*/
 
@@ -37,7 +37,11 @@ $code-color: $accent-color;
 }
 
 .reveal code {
-  background-color: #303030 !important;
+  background-color: #D9F1F0 !important;
+}
+
+.reveal code.sourceCode {
+  background-color: #2B2B2B !important;
 }
 
 .slide-background-content {
