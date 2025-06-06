@@ -49,6 +49,9 @@ jobs:
       - name: Add test coverage badge
         run: Rscript -e "jsonlite::write_json(list(coverage = sprintf('%.1f%%', covr::percent_coverage(covr::package_coverage()))), 'docs/coverage.json', auto_unbox = TRUE)"
 
+      - name: Change the GitHub README content
+        run: cp docs/README_github.md README.md
+
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4.5.0
