@@ -662,8 +662,7 @@ footer:
 
 ## Let's see it in action
 
-* We'll add an additional component to our navbar called `#js_alert#`
-* When the button is clicked, a pop-up message will appear
+* We'll add an additional component to our navbar called `#js_alert#` -- a pop-up message will appear when button is clicked
 
 :::: {.columns}
 
@@ -789,11 +788,17 @@ It's pretty complicated:
 
 The most important commands for R users are:
 
-  * `mkdir folder_name`: Make a new folder called `folder_name`
-  * `cd folder_name`: Change current directory to `folder_name` (use `cd ../` to go up a folder level)
-  * `cp old_folder/file_name new_folder/file_name`: Copy the `file_name` from the `old_folder` to the `new_folder`
-  * `Rscript -e`: Execute a line of R code
-  * `quarto render proj_name --output-dir="docs"`: Render your Quarto file into the `docs` folder
+:::{.smaller}
+
+| **Command**                                    	| **What it does**                                                                 	|
+|------------------------------------------------	|----------------------------------------------------------------------------------	|
+| `mkdir folder_name`                            	| Make a new folder called `folder_name`                                           	|
+| `cd folder_name`                               	| Change current directory to `folder_name` (use `cd ../` to go up a folder level) 	|
+| `cp old_folder/file_name new_folder/file_name` 	| Copy the `file_name` file from the `old_folder` to the `new_folder`              	|
+| `Rscript -e`                                   	| Execute a line of R code                                                         	|
+| `quarto render proj_name --output-dir="docs"`  	| Render your Quarto file into the `docs` folder                                   	|
+
+:::
 
 ## Let's see an example!
 
@@ -810,7 +815,7 @@ We're going to change the `link.svg` image
 
 ::: {.column width="50%"}
 
-<img src="link.svg" style="width:300px; vertical-align: middle;">
+<img src="link.svg" style="width:200px; vertical-align: middle;">
 
 :::
 
@@ -861,6 +866,8 @@ use_vignette(name = "tutorial.qmd", title = "Tutorial Title")
           needs: website
 ```
 
+## Troubleshooting Quarto vignettes
+
 :::{.callout-tip}
 
 ## Tip
@@ -869,7 +876,7 @@ If there is an error in your Quarto file (i.e., it does not render), the error m
 
 :::
 
-## Changing your navbar structure to account for your documentation
+## Changing your navbar structure
 
 You can type `Alt+0160` to add a blank character (`&nbsp;` will not work).
 
@@ -1078,6 +1085,8 @@ From your domain provider's DNS settings (full details [here](https://docs.githu
 185.199.110.153
 185.199.111.153
 ```
+
+## Telling your domain to point to your GitHub Pages
 
 * Add a `CNAME` record (use `www` rather than `@`) and point it to your GitHub Pages URL
 
