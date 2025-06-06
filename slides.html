@@ -93,7 +93,7 @@
     code span.vs { color: #cc9393; } /* VerbatimString */
     code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-a81f19896bfc1612630717765d40623a.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-a7ffc405c29ba5bb1e90c0168fceab51.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -806,8 +806,7 @@ Melissa Van Bussel
 <section id="lets-see-it-in-action" class="slide level2">
 <h2>Let’s see it in action</h2>
 <ul>
-<li>We’ll add an additional component to our navbar called <code>#js_alert#</code></li>
-<li>When the button is clicked, a pop-up message will appear</li>
+<li>We’ll add an additional component to our navbar called <code>#js_alert#</code> – a pop-up message will appear when button is clicked</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -932,13 +931,42 @@ Melissa Van Bussel
 <h2>What are those commands?</h2>
 <p><strong>Remember:</strong> GitHub Pages will host any page that ends up in our <code>/docs</code> folder.</p>
 <p>The most important commands for R users are:</p>
-<ul>
-<li><code>mkdir folder_name</code>: Make a new folder called <code>folder_name</code></li>
-<li><code>cd folder_name</code>: Change current directory to <code>folder_name</code> (use <code>cd ../</code> to go up a folder level)</li>
-<li><code>cp old_folder/file_name new_folder/file_name</code>: Copy the <code>file_name</code> from the <code>old_folder</code> to the <code>new_folder</code></li>
-<li><code>Rscript -e</code>: Execute a line of R code</li>
-<li><code>quarto render proj_name --output-dir="docs"</code>: Render your Quarto file into the <code>docs</code> folder</li>
-</ul>
+<div class="smaller">
+<table class="caption-top">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Command</strong></th>
+<th><strong>What it does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mkdir folder_name</code></td>
+<td>Make a new folder called <code>folder_name</code></td>
+</tr>
+<tr class="even">
+<td><code>cd folder_name</code></td>
+<td>Change current directory to <code>folder_name</code> (use <code>cd ../</code> to go up a folder level)</td>
+</tr>
+<tr class="odd">
+<td><code>cp old_folder/file_name new_folder/file_name</code></td>
+<td>Copy the <code>file_name</code> file from the <code>old_folder</code> to the <code>new_folder</code></td>
+</tr>
+<tr class="even">
+<td><code>Rscript -e</code></td>
+<td>Execute a line of R code</td>
+</tr>
+<tr class="odd">
+<td><code>quarto render proj_name --output-dir="docs"</code></td>
+<td>Render your Quarto file into the <code>docs</code> folder</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="lets-see-an-example" class="slide level2">
 <h2>Let’s see an example!</h2>
@@ -947,7 +975,7 @@ Melissa Van Bussel
 <div class="column" style="width:50%;">
 <p><img src="https://pkgdown.r-lib.org/link.svg" style="width:300px; vertical-align: middle;"></p>
 </div><div class="column" style="width:50%;">
-<p><img src="link.svg" style="width:300px; vertical-align: middle;"></p>
+<p><img src="link.svg" style="width:200px; vertical-align: middle;"></p>
 </div></div>
 </section>
 <section id="how-do-we-change-it" class="slide level2">
@@ -999,6 +1027,9 @@ Melissa Van Bussel
 <span id="cb43-3"><a href=""></a>          extra<span class="sc">-</span>packages<span class="sc">:</span> any<span class="sc">::</span>pkgdown, local<span class="sc">::</span>., reticulate</span>
 <span id="cb43-4"><a href=""></a>          needs<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="troubleshooting-quarto-vignettes-1" class="slide level2">
+<h2>Troubleshooting Quarto vignettes</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1013,8 +1044,8 @@ Melissa Van Bussel
 </div>
 </div>
 </section>
-<section id="changing-your-navbar-structure-to-account-for-your-documentation" class="slide level2">
-<h2>Changing your navbar structure to account for your documentation</h2>
+<section id="changing-your-navbar-structure" class="slide level2">
+<h2>Changing your navbar structure</h2>
 <p>You can type <code>Alt+0160</code> to add a blank character (<code>&amp;nbsp;</code> will not work).</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb44-1"><a href=""></a><span class="fu">navbar</span><span class="kw">:</span></span>
 <span id="cb44-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
@@ -1199,6 +1230,9 @@ Melissa Van Bussel
 185.199.109.153
 185.199.110.153
 185.199.111.153</code></pre>
+</section>
+<section id="telling-your-domain-to-point-to-your-github-pages-1" class="slide level2">
+<h2>Telling your domain to point to your GitHub Pages</h2>
 <ul>
 <li>Add a <code>CNAME</code> record (use <code>www</code> rather than <code>@</code>) and point it to your GitHub Pages URL</li>
 </ul>
