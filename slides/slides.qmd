@@ -767,7 +767,7 @@ template:
 
 It's pretty complicated:
 
-<iframe src="https://github.com/quarto-dev/quarto-actions/blob/main/setup/action.yml" width="800" height="450"></iframe>
+![](quarto_action.jpg)
 
 ## GitHub Actions in the `.github/workflows/pkgdown.yaml` file
 
