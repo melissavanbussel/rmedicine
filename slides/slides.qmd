@@ -1125,7 +1125,11 @@ If your custom domain has a different depth than your GitHub Pages URL, you may 
         run: quarto render slides/slides.qmd --output-dir="../docs"
 ```
 
-# Feedback form
+## Feedback form
+
+Please use [this form](https://forms.gle/zGVCKTcnponoyqDh7) to provide anonymous feedback about today's workshop. 
+
+I'll likely be teaching this again in other contexts, so any feedback you have is greatly appreciated and will be used to improve future iterations 😊.
 
 ## Thank you!
 
