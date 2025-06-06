@@ -93,7 +93,7 @@
     code span.vs { color: #cc9393; } /* VerbatimString */
     code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-58a0266eb66c1971595f7b7adbff4a17.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-a81f19896bfc1612630717765d40623a.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -276,7 +276,7 @@ Melissa Van Bussel
 <section id="part-3-mastering-github-pages" class="slide level2">
 <h2>Part 3: Mastering GitHub Pages</h2>
 <ul>
-<li>How GitHub Actions works</li>
+<li>How GitHub Actions + GitHub Pages work</li>
 <li>Quarto vignettes</li>
 <li>Further customization: logo in navbar, sidebar content</li>
 </ul>
@@ -290,9 +290,14 @@ Melissa Van Bussel
 </ul>
 <p><em>the end</em></p>
 </section></section>
+<section id="part-1-getting-started-1" class="title-slide slide level1 center" data-background-image="part1.png">
+<h1>Part 1: Getting started</h1>
+
+</section>
+
 <section>
-<section id="section-0-pre-workshop-setup-steps" class="title-slide slide level1 center">
-<h1>Section 0: Pre-workshop setup steps</h1>
+<section id="pre-workshop-setup-steps" class="title-slide slide level1 center">
+<h1>Pre-workshop setup steps</h1>
 <div class="footer">
 <p><a href="https://rconsortium.github.io/RMedicine_website/files/R%20package%20development%20with%20GitHub%20Pages%20and%20pkgdown.pdf">Click here for the PDF version</a></p>
 </div>
@@ -347,8 +352,8 @@ Melissa Van Bussel
 </div>
 </section></section>
 <section>
-<section id="section-1-basic-package-creation" class="title-slide slide level1 center">
-<h1>Section 1: Basic package creation</h1>
+<section id="basic-package-creation" class="title-slide slide level1 center">
+<h1>Basic package creation</h1>
 
 </section>
 <section id="creating-a-new-project" class="slide level2">
@@ -490,8 +495,8 @@ Melissa Van Bussel
 </div></div>
 </section></section>
 <section>
-<section id="section-2-getting-things-up-onto-github-pages" class="title-slide slide level1 center">
-<h1>Section 2: Getting things up onto GitHub Pages</h1>
+<section id="getting-things-up-onto-github-pages" class="title-slide slide level1 center">
+<h1>Getting things up onto GitHub Pages</h1>
 
 </section>
 <section id="always-run-check-before-pushing-to-github" class="slide level2">
@@ -533,9 +538,19 @@ Melissa Van Bussel
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">build_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
+<section id="break" class="title-slide slide level1 center">
+<h1>BREAK</h1>
+
+</section>
+
+<section id="part-2-making-your-site-yours-1" class="title-slide slide level1 center" data-background-image="part2.png">
+<h1>Part 2: Making your site <em>yours</em></h1>
+
+</section>
+
 <section>
-<section id="section-3-lets-make-things-a-little-prettier" class="title-slide slide level1 center">
-<h1>Section 3: Let’s make things a little prettier</h1>
+<section id="lets-make-things-a-little-prettier" class="title-slide slide level1 center">
+<h1>Let’s make things a little prettier</h1>
 
 </section>
 <section id="creating-a-package-logo" class="slide level2">
@@ -685,14 +700,9 @@ Melissa Van Bussel
 <span id="cb29-11"><a href=""></a>  theme<span class="sc">-</span>dark<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>dark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
-<section id="break" class="title-slide slide level1 center">
-<h1>BREAK</h1>
-
-</section>
-
 <section>
-<section id="section-4-customizing-our-content" class="title-slide slide level1 center">
-<h1>Section 4: Customizing our content</h1>
+<section id="customizing-our-content" class="title-slide slide level1 center">
+<h1>Customizing our content</h1>
 
 </section>
 <section id="the-default-reference-page" class="slide level2">
@@ -855,9 +865,14 @@ Melissa Van Bussel
 
 </section>
 
+<section id="part-3-mastering-github-pages-1" class="title-slide slide level1 center" data-background-image="part3.png">
+<h1>Part 3: Mastering GitHub Pages</h1>
+
+</section>
+
 <section>
-<section id="section-5-stuff-that-requires-a-deeper-understanding-of-github-pages" class="title-slide slide level1 center">
-<h1>Section 5: Stuff that requires a deeper understanding of GitHub Pages</h1>
+<section id="how-github-actions-github-pages-work" class="title-slide slide level1 center">
+<h1>How GitHub Actions + GitHub Pages work</h1>
 
 </section>
 <section id="how-does-github-pages-actually-work" class="slide level2">
@@ -930,9 +945,9 @@ Melissa Van Bussel
 <p>We’re going to change the <code>link.svg</code> image</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="https://pkgdown.r-lib.org/link.svg"></p>
+<p><img src="https://pkgdown.r-lib.org/link.svg" style="width:300px; vertical-align: middle;"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="link.svg"></p>
+<p><img src="link.svg" style="width:300px; vertical-align: middle;"></p>
 </div></div>
 </section>
 <section id="how-do-we-change-it" class="slide level2">
@@ -957,6 +972,11 @@ Melissa Van Bussel
 <li>Adding a dynamic test coverage badge</li>
 <li>Custom domain for your GitHub Pages</li>
 </ul>
+</section></section>
+<section>
+<section id="quarto-vignettes" class="title-slide slide level1 center">
+<h1>Quarto vignettes</h1>
+
 </section>
 <section id="adding-a-quarto-vignette" class="slide level2">
 <h2>Adding a Quarto vignette</h2>
@@ -1019,6 +1039,11 @@ Melissa Van Bussel
 <span id="cb44-21"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/print_hello_world.html</span></span>
 <span id="cb44-22"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;&nbsp;&nbsp;Print Hello R/Medicine"</span></span>
 <span id="cb44-23"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/print_hello_rmedicine.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="further-customization" class="title-slide slide level1 center">
+<h1>Further customization</h1>
+
 </section>
 <section id="adding-a-logo-in-your-navbar" class="slide level2">
 <h2>Adding a logo in your navbar</h2>
@@ -1151,8 +1176,8 @@ Melissa Van Bussel
 </section>
 
 <section>
-<section id="section-6-extra-fancy-stuff" class="title-slide slide level1 center">
-<h1>Section 6: Extra fancy stuff</h1>
+<section id="bonus-extra-fancy-stuff-if-theres-time" class="title-slide slide level1 center">
+<h1>BONUS: Extra fancy stuff (if there’s time)</h1>
 
 </section>
 <section id="using-a-custom-domain-for-github-pages" class="slide level2">
@@ -1227,10 +1252,17 @@ Melissa Van Bussel
 <h2>Thank you!</h2>
 <p>Any questions?</p>
 <p><br></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" style="width:50px; vertical-align: middle;"> <a href="https://www.melissavanbussel.com">melissavanbussel.com</a></p>
-<p>🌐 <a href="https://www.linkedin.com/in/melissavanbussel/"><span class="citation" data-cites="melissavanbussel">@melissavanbussel</span></a></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Globo_da_Terra.svg/800px-Globo_da_Terra.svg.png" style="width:50px; vertical-align: middle;"> <a href="https://www.melissavanbussel.com">melissavanbussel.com</a></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" style="width:50px; vertical-align: middle;"> <a href="https://www.linkedin.com/in/melissavanbussel/"><span class="citation" data-cites="melissavanbussel">@melissavanbussel</span></a></p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" style="width:50px; vertical-align: middle;"> <a href="https://www.github.com/melissavanbussel"><span class="citation" data-cites="melissavanbussel">@melissavanbussel</span></a></p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png?20240107144800" style="width:50px; vertical-align: middle;"> <a href="https://www.youtube.com/c/ggnot2"><span class="citation" data-cites="ggnot2">@ggnot2</span></a></p>
+</section>
+<section id="credits" class="slide level2">
+<h2>Credits</h2>
+<ul>
+<li>Images created using Canva</li>
+<li>Wikimedia commons</li>
+</ul>
 
 </section></section>
     </div>
