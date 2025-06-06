@@ -48,6 +48,10 @@ $code-block-bg: $tertiary-color;
   background-color: #fffcfc !important;
 }
 
+.reveal pre.sourceCode code {
+  max-height: 1000px;
+}
+
 h1.title {
   font-size: 2em;
 }

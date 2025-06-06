@@ -18,7 +18,6 @@ format:
     code-overflow: scroll
     code-line-numbers: true
     code-copy: true
-    code-block-height: 500px
     menu: false
     lang: en
     footer: "[ggnot2.site](https://ggnot2.site/index.html)"
@@ -82,7 +81,7 @@ format:
 
 ## Part 3: Mastering GitHub Pages
 
-* How GitHub Actions works
+* How GitHub Actions + GitHub Pages work
 * Quarto vignettes
 * Further customization: logo in navbar, sidebar content
 
@@ -95,7 +94,9 @@ format:
 
 *the end*
 
-# Section 0: Pre-workshop setup steps
+# Part 1: Getting started {background-image="part1.png"}
+
+# Pre-workshop setup steps
 
 ::: {.footer}
 
@@ -146,7 +147,7 @@ usethis::create_github_token()
 gitcreds::gitcreds_set()
 ```
 
-# Section 1: Basic package creation
+# Basic package creation
 
 ## Creating a new project
 
@@ -339,7 +340,7 @@ test_that("print_hello_rmedicine prints hello rmedicine", {
 
 ::::
 
-# Section 2: Getting things up onto GitHub Pages
+# Getting things up onto GitHub Pages
 
 ## Always run `check()` before pushing to GitHub
 
@@ -384,7 +385,11 @@ To preview changes locally:
 build_site()
 ```
 
-# Section 3: Let's make things a little prettier
+# BREAK
+
+# Part 2: Making your site *yours* {background-image="part2.png"}
+
+# Let's make things a little prettier
 
 ## Creating a package logo
 
@@ -547,9 +552,7 @@ template:
   theme-dark: atom-one-dark
 ```
 
-# BREAK
-
-# Section 4: Customizing our content
+# Customizing our content
 
 ## The default "reference" page
 
@@ -731,7 +734,9 @@ template:
 
 # BREAK
 
-# Section 5: Stuff that requires a deeper understanding of GitHub Pages
+# Part 3: Mastering GitHub Pages {background-image="part3.png"}
+
+# How GitHub Actions + GitHub Pages work
 
 ## How does GitHub Pages actually work*?
 
@@ -798,13 +803,14 @@ We're going to change the `link.svg` image
 
 ::: {.column width="50%"}
 
-![](https://pkgdown.r-lib.org/link.svg)
+
+<img src="https://pkgdown.r-lib.org/link.svg" style="width:300px; vertical-align: middle;">
 
 :::
 
 ::: {.column width="50%"}
 
-![](link.svg)
+<img src="link.svg" style="width:300px; vertical-align: middle;">
 
 :::
 
@@ -831,6 +837,8 @@ We need to add this *after* the `pkgdown::build_site_github_pages()` function is
 * Logo image in the navbar
 * Adding a dynamic test coverage badge
 * Custom domain for your GitHub Pages
+
+# Quarto vignettes
 
 ## Adding a Quarto vignette
 
@@ -890,6 +898,8 @@ navbar:
         - text: "    Print Hello R/Medicine"
           href: reference/print_hello_rmedicine.html
 ```
+
+# Further customization
 
 ## Adding a logo in your navbar
 
@@ -1047,7 +1057,7 @@ home:
 
 # BREAK
 
-# Section 6: Extra fancy stuff
+# BONUS: Extra fancy stuff (if there's time)
 
 ## Using a custom domain for GitHub Pages
 
@@ -1114,10 +1124,15 @@ Any questions?
 
 <br>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" style="width:50px; vertical-align: middle;"> [melissavanbussel.com](https://www.melissavanbussel.com)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Globo_da_Terra.svg/800px-Globo_da_Terra.svg.png" style="width:50px; vertical-align: middle;"> [melissavanbussel.com](https://www.melissavanbussel.com)
 
-🌐 [@melissavanbussel](https://www.linkedin.com/in/melissavanbussel/)
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" style="width:50px; vertical-align: middle;">  [@melissavanbussel](https://www.linkedin.com/in/melissavanbussel/)
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" style="width:50px; vertical-align: middle;"> [@melissavanbussel](https://www.github.com/melissavanbussel)
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png?20240107144800" style="width:50px; vertical-align: middle;"> [@ggnot2](https://www.youtube.com/c/ggnot2)
+
+## Credits
+
+* Images created using Canva
+* Wikimedia commons
