@@ -763,9 +763,9 @@ template:
 * You can create a **GitHub Action** and run a series of terminal commands with just 2 lines, instead of many (e.g., 50+)!
 * Other people can use your Actions, too! 🤝
 
-## Example: Install Quarto action
+## Example: "Install Quarto" action
 
-It's pretty complicated:
+[It's](https://github.com/quarto-dev/quarto-actions/blob/main/setup/action.yml) pretty complicated:
 
 ![](quarto_action.jpg)
 
