@@ -40,11 +40,11 @@ format:
 
 :::
 
-## How to participate
+## How to get the most out of today's session
 
 * **Please participate!** This is a 3-hour workshop, which is a long time to stay focused. The more you participate, the more fun it will be for everyone. ☺️
-* **Ask questions** ❓if you have them
-* **Use the polls**, it'll help me figure readjust pacing and topics in real-time. 🗳️
+* **Ask questions**❓if you have them
+* This will help me figure readjust pacing and topics in real-time.
 
 ## By the end of this workshop, you will have...
 
@@ -1145,7 +1145,10 @@ Any questions?
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png?20240107144800" style="width:50px; vertical-align: middle;"> [@ggnot2](https://www.youtube.com/c/ggnot2)
 
-## Credits
+## Image credits
 
-* Images created using Canva
-* Wikimedia commons
+* Logo created using Canva
+* <a href="https://commons.wikimedia.org/wiki/File:Globo_da_Terra.svg">File:Globe important.svg: SsolbergjDerivative work: JaviP96</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons
+* <a href="https://commons.wikimedia.org/wiki/File:LinkedIn_icon.svg">LinkedIn</a>, Public domain, via Wikimedia Commons
+* <a href="https://commons.wikimedia.org/wiki/File:Octicons-mark-github.svg">GitHub Inc.</a>, <a href="http://opensource.org/licenses/mit-license.php">MIT</a>, via Wikimedia Commons
+* <a href="https://commons.wikimedia.org/wiki/File:YouTube_full-color_icon_(2017).svg">Original: YouTube Vector:  Jarould</a>, Public domain, via Wikimedia Commons
