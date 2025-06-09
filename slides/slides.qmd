@@ -494,6 +494,8 @@ template:
         └── 📄 extra.scss
 ```        
 
+Minimal content for `extra.scss:`
+
 ```{r}
 /*-- scss:defaults --*/
 /*-- scss:rules --*/
@@ -839,9 +841,8 @@ We're going to change the `link.svg` image
 
 ## Modifying the `.github/workflows/pkgdown.yaml` file
 
-We'll add our custom image as `pkgdown/assets/custom_link.svg` (any files in the `pkgdown/assets` folder will be automatically copied to the `docs` folder during the workflow.
-
-We need to add this *after* the `pkgdown::build_site_github_pages()` function is called.
+* We'll add our custom image as `pkgdown/assets/custom_link.svg` (any files in the `pkgdown/assets` folder will be automatically copied to the `docs` folder during the workflow).
+* We need to add this *after* the `pkgdown::build_site_github_pages()` function is called.
 
 ```yaml
       - name: Override link.svg image with custom_link.svg image
@@ -850,10 +851,10 @@ We need to add this *after* the `pkgdown::build_site_github_pages()` function is
 
 ## Vote: Which topic do you want to cover?
 
-* Quarto vignettes
-* Logo image in the navbar
-* Adding a dynamic test coverage badge
-* Custom domain for your GitHub Pages
+* A: Quarto vignettes
+* B: Logo image in the navbar
+* C: Adding a dynamic test coverage badge
+* D: Custom domain for your GitHub Pages
 
 # Quarto vignettes
 
