@@ -360,7 +360,7 @@ Melissa Van Bussel
 <h2>Creating a new project</h2>
 <ul>
 <li>Make sure the <code>devtools</code> package is installed</li>
-<li><code>File &gt; New project &gt; R package using devtools</code></li>
+<li><code>File &gt; New project &gt; New Directory &gt; R package using devtools</code></li>
 <li>Name of the package: <code>rmedicine</code></li>
 </ul>
 <div class="cell">
@@ -370,20 +370,25 @@ Melissa Van Bussel
 </section>
 <section id="the-description-file" class="slide level2">
 <h2>The <code>DESCRIPTION</code> file</h2>
-<p><br></p>
 <p>Run</p>
-<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">use_mit_license</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
-<p>then update the <code>Authors@R</code> field and change the version number to something a little less long.</p>
+<p>then update the <code>Authors@R</code> field</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
+<span id="cb6-2"><a href=""></a>    <span class="fu">person</span>(<span class="st">"Melissa"</span>, <span class="st">"Van Bussel"</span>, , <span class="st">"melissalisevb@gmail.com"</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">"aut"</span>, <span class="st">"cre"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and change the version number to something a little less long.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">0.9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="creating-a-readme.md-file" class="slide level2">
 <h2>Creating a <code>README.md</code> file</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">use_readme_md</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">use_readme_md</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="making-our-first-r-function" class="slide level2">
@@ -392,28 +397,28 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"print_hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"print_hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co">#' Print hello world</span></span>
-<span id="cb8-2"><a href=""></a><span class="co">#'</span></span>
-<span id="cb8-3"><a href=""></a><span class="co">#' This function just prints hello world.</span></span>
-<span id="cb8-4"><a href=""></a><span class="co">#'</span></span>
-<span id="cb8-5"><a href=""></a><span class="co">#' @param x This argument does nothing.</span></span>
-<span id="cb8-6"><a href=""></a><span class="co">#'  If it did do something, it might require more words to explain.</span></span>
-<span id="cb8-7"><a href=""></a><span class="co">#'</span></span>
-<span id="cb8-8"><a href=""></a><span class="co">#' @return Prints `"Hello, world!"` to the console</span></span>
-<span id="cb8-9"><a href=""></a><span class="co">#'</span></span>
-<span id="cb8-10"><a href=""></a><span class="co">#' @examples</span></span>
-<span id="cb8-11"><a href=""></a><span class="co">#' print_hello_world(x = 1)</span></span>
-<span id="cb8-12"><a href=""></a><span class="co">#'</span></span>
-<span id="cb8-13"><a href=""></a><span class="co">#' @export</span></span>
-<span id="cb8-14"><a href=""></a>print_hello_world <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb8-15"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Hello, world!"</span>)</span>
-<span id="cb8-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co">#' Print hello world</span></span>
+<span id="cb10-2"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-3"><a href=""></a><span class="co">#' This function just prints hello world.</span></span>
+<span id="cb10-4"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-5"><a href=""></a><span class="co">#' @param x This argument does nothing.</span></span>
+<span id="cb10-6"><a href=""></a><span class="co">#'  If it did do something, it might require more words to explain.</span></span>
+<span id="cb10-7"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-8"><a href=""></a><span class="co">#' @return Prints `"Hello, world!"` to the console</span></span>
+<span id="cb10-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-10"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb10-11"><a href=""></a><span class="co">#' print_hello_world(x = 1)</span></span>
+<span id="cb10-12"><a href=""></a><span class="co">#'</span></span>
+<span id="cb10-13"><a href=""></a><span class="co">#' @export</span></span>
+<span id="cb10-14"><a href=""></a>print_hello_world <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb10-15"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Hello, world!"</span>)</span>
+<span id="cb10-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -423,28 +428,28 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"print_hello_rmedicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">use_r</span>(<span class="st">"print_hello_rmedicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co">#' Print hello R/Medicine</span></span>
-<span id="cb10-2"><a href=""></a><span class="co">#'</span></span>
-<span id="cb10-3"><a href=""></a><span class="co">#' This function just prints hello R/Medicine.</span></span>
-<span id="cb10-4"><a href=""></a><span class="co">#'</span></span>
-<span id="cb10-5"><a href=""></a><span class="co">#' @param x This argument does nothing.</span></span>
-<span id="cb10-6"><a href=""></a><span class="co">#'  If it did do something, it might require more words to explain.</span></span>
-<span id="cb10-7"><a href=""></a><span class="co">#'</span></span>
-<span id="cb10-8"><a href=""></a><span class="co">#' @return Prints `"Hello, R/Medicine"` to the console</span></span>
-<span id="cb10-9"><a href=""></a><span class="co">#'</span></span>
-<span id="cb10-10"><a href=""></a><span class="co">#' @examples</span></span>
-<span id="cb10-11"><a href=""></a><span class="co">#' print_hello_rmedicine(x = 1)</span></span>
-<span id="cb10-12"><a href=""></a><span class="co">#'</span></span>
-<span id="cb10-13"><a href=""></a><span class="co">#' @export</span></span>
-<span id="cb10-14"><a href=""></a>print_hello_rmedicine <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb10-15"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Hello, R/Medicine!"</span>)</span>
-<span id="cb10-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co">#' Print hello R/Medicine</span></span>
+<span id="cb12-2"><a href=""></a><span class="co">#'</span></span>
+<span id="cb12-3"><a href=""></a><span class="co">#' This function just prints hello R/Medicine.</span></span>
+<span id="cb12-4"><a href=""></a><span class="co">#'</span></span>
+<span id="cb12-5"><a href=""></a><span class="co">#' @param x This argument does nothing.</span></span>
+<span id="cb12-6"><a href=""></a><span class="co">#'  If it did do something, it might require more words to explain.</span></span>
+<span id="cb12-7"><a href=""></a><span class="co">#'</span></span>
+<span id="cb12-8"><a href=""></a><span class="co">#' @return Prints `"Hello, R/Medicine"` to the console</span></span>
+<span id="cb12-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb12-10"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb12-11"><a href=""></a><span class="co">#' print_hello_rmedicine(x = 1)</span></span>
+<span id="cb12-12"><a href=""></a><span class="co">#'</span></span>
+<span id="cb12-13"><a href=""></a><span class="co">#' @export</span></span>
+<span id="cb12-14"><a href=""></a>print_hello_rmedicine <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-15"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Hello, R/Medicine!"</span>)</span>
+<span id="cb12-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -454,20 +459,20 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># install.packages("testthat")</span></span>
-<span id="cb11-2"><a href=""></a><span class="fu">library</span>(testthat)</span>
-<span id="cb11-3"><a href=""></a><span class="fu">use_test</span>(<span class="st">"print_hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># install.packages("testthat")</span></span>
+<span id="cb13-2"><a href=""></a><span class="fu">library</span>(testthat)</span>
+<span id="cb13-3"><a href=""></a><span class="fu">use_test</span>(<span class="st">"print_hello_world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">test_that</span>(<span class="st">"print_hello_world prints hello world"</span>, {</span>
-<span id="cb12-2"><a href=""></a>  <span class="fu">expect_equal</span>(</span>
-<span id="cb12-3"><a href=""></a>    <span class="fu">print_hello_world</span>(<span class="at">x =</span> <span class="st">"test"</span>),</span>
-<span id="cb12-4"><a href=""></a>    <span class="st">"Hello, world!"</span></span>
-<span id="cb12-5"><a href=""></a>  )</span>
-<span id="cb12-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">test_that</span>(<span class="st">"print_hello_world prints hello world"</span>, {</span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">expect_equal</span>(</span>
+<span id="cb14-3"><a href=""></a>    <span class="fu">print_hello_world</span>(<span class="at">x =</span> <span class="st">"test"</span>),</span>
+<span id="cb14-4"><a href=""></a>    <span class="st">"Hello, world!"</span></span>
+<span id="cb14-5"><a href=""></a>  )</span>
+<span id="cb14-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -477,20 +482,20 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># install.packages("testthat")</span></span>
-<span id="cb13-2"><a href=""></a><span class="fu">library</span>(testthat)</span>
-<span id="cb13-3"><a href=""></a><span class="fu">use_test</span>(<span class="st">"print_hello_rmedicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># install.packages("testthat")</span></span>
+<span id="cb15-2"><a href=""></a><span class="fu">library</span>(testthat)</span>
+<span id="cb15-3"><a href=""></a><span class="fu">use_test</span>(<span class="st">"print_hello_rmedicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">test_that</span>(<span class="st">"print_hello_rmedicine prints hello rmedicine"</span>, {</span>
-<span id="cb14-2"><a href=""></a>  <span class="fu">expect_equal</span>(</span>
-<span id="cb14-3"><a href=""></a>    <span class="fu">print_hello_rmedicine</span>(<span class="at">x =</span> <span class="st">"test"</span>),</span>
-<span id="cb14-4"><a href=""></a>    <span class="st">"Hello, R/Medicine!"</span></span>
-<span id="cb14-5"><a href=""></a>  )</span>
-<span id="cb14-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">test_that</span>(<span class="st">"print_hello_rmedicine prints hello rmedicine"</span>, {</span>
+<span id="cb16-2"><a href=""></a>  <span class="fu">expect_equal</span>(</span>
+<span id="cb16-3"><a href=""></a>    <span class="fu">print_hello_rmedicine</span>(<span class="at">x =</span> <span class="st">"test"</span>),</span>
+<span id="cb16-4"><a href=""></a>    <span class="st">"Hello, R/Medicine!"</span></span>
+<span id="cb16-5"><a href=""></a>  )</span>
+<span id="cb16-6"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section></section>
@@ -503,28 +508,28 @@ Melissa Van Bussel
 <h2>Always run <code>check()</code> before pushing to GitHub</h2>
 <p>We should see no errors, warnings, or notes!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">check</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">check</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="initialize-the-git-repository" class="slide level2">
 <h2>Initialize the git repository</h2>
 <p>This will create the <code>.git</code> folder, and populate the <code>.gitignore</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">use_git</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">use_git</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-the-repository-on-github" class="slide level2">
 <h2>Creating the repository on GitHub</h2>
 <p>The <code>usethis</code> package makes this step very simple for us!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">use_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">use_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="publishing-the-pkgdown-site-using-github-pages" class="slide level2">
 <h2>Publishing the <code>pkgdown</code> site using GitHub Pages</h2>
 <p>Again, the <code>usethis</code> package makes this very easy to do!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">use_pkgdown_github_pages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">use_pkgdown_github_pages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="making-changes-from-here" class="slide level2">
@@ -535,7 +540,7 @@ Melissa Van Bussel
 </ul>
 <p>To preview changes locally:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">build_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">build_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section id="break" class="title-slide slide level1 center">
@@ -569,25 +574,25 @@ Melissa Van Bussel
 <h2>Adding the logo to your package</h2>
 <p>You can run the <code>use_logo</code> function, which will automatically place the file in the right location within your package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">use_logo</span>(<span class="st">"your/path/here.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">use_logo</span>(<span class="st">"your/path/here.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-favicons" class="slide level2">
 <h2>Creating favicons</h2>
 <p>Without loading the <code>pkgdown</code> package, run</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>pkgdown<span class="sc">::</span><span class="fu">build_favicons</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>pkgdown<span class="sc">::</span><span class="fu">build_favicons</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="adding-a-bootswatch-theme" class="slide level2">
 <h2>Adding a bootswatch theme</h2>
 <p>In the <code>_pkgdown.yaml</code> file, add a <a href="https://bootswatch.com/">bootswatch theme</a>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
-<span id="cb22-2"><a href=""></a>template<span class="sc">:</span></span>
-<span id="cb22-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb22-4"><a href=""></a>  bslib<span class="sc">:</span></span>
-<span id="cb22-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb24-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb24-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb24-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb24-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -610,12 +615,12 @@ Melissa Van Bussel
 <li>To change the “primary colour” of your theme, for example:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
-<span id="cb23-2"><a href=""></a>template<span class="sc">:</span></span>
-<span id="cb23-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb23-4"><a href=""></a>  bslib<span class="sc">:</span></span>
-<span id="cb23-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
-<span id="cb23-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb25-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb25-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb25-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb25-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb25-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="changing-the-font-using-bslib" class="slide level2">
@@ -624,14 +629,14 @@ Melissa Van Bussel
 <li>There are a few ways you can change the fonts, but using <a href="">Google fonts</a> with <code>bslib</code> is the easiest!</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
-<span id="cb24-2"><a href=""></a>template<span class="sc">:</span></span>
-<span id="cb24-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb24-4"><a href=""></a>  bslib<span class="sc">:</span></span>
-<span id="cb24-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
-<span id="cb24-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
-<span id="cb24-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
-<span id="cb24-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26" data-code-line-numbers="7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb26-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb26-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb26-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb26-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb26-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
+<span id="cb26-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
+<span id="cb26-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="adding-a-custom.scss-file" class="slide level2">
@@ -643,6 +648,10 @@ Melissa Van Bussel
 <pre><code>└── 📁 rmedicine/
     └── 📁 pkgdown/
         └── 📄 extra.scss</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="sc">/</span><span class="er">*</span><span class="sc">--</span> scss<span class="sc">:</span>defaults <span class="sc">--</span><span class="er">*/</span></span>
+<span id="cb28-2"><a href=""></a><span class="er">/*</span><span class="sc">--</span> scss<span class="sc">:</span>rules <span class="sc">--</span><span class="er">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="right-clicking-and-inspecting" class="slide level2">
 <h2>Right clicking and inspecting</h2>
@@ -651,9 +660,9 @@ Melissa Van Bussel
 <li>In Google Chrome: <code>Right click &gt; Inspect</code></li>
 <li>The class is called <code>.form-control</code></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb26-1"><a href=""></a><span class="fu">.form-control</span> {</span>
-<span id="cb26-2"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f4cccc</span><span class="op">;</span></span>
-<span id="cb26-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb29-1"><a href=""></a><span class="fu">.form-control</span> {</span>
+<span id="cb29-2"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f4cccc</span><span class="op">;</span></span>
+<span id="cb29-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="adding-a-lightswitch" class="slide level2">
 <h2>Adding a lightswitch</h2>
@@ -661,43 +670,43 @@ Melissa Van Bussel
 <li>We can enable a <strong>dark mode</strong> by setting <code>light-switch</code> to <code>true</code> in our <code>_pkgdown.yml</code> file:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
-<span id="cb27-2"><a href=""></a>template<span class="sc">:</span></span>
-<span id="cb27-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb27-4"><a href=""></a>  bslib<span class="sc">:</span></span>
-<span id="cb27-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
-<span id="cb27-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
-<span id="cb27-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
-<span id="cb27-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span>
-<span id="cb27-9"><a href=""></a>  light<span class="sc">-</span><span class="cf">switch</span><span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb30-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb30-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb30-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb30-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb30-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
+<span id="cb30-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
+<span id="cb30-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span>
+<span id="cb30-9"><a href=""></a>  light<span class="sc">-</span><span class="cf">switch</span><span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="but-what-if-we-want-different-styles-for-light-mode-and-dark-mode" class="slide level2">
 <h2>…but what if we want different styles for light mode and dark mode?</h2>
 <p>In our <code>extra.scss</code> file:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb28-1"><a href=""></a><span class="ex">[</span><span class="ss">data-bs-theme</span><span class="op">=</span><span class="st">"light"</span><span class="ex">]</span> <span class="fu">.form-control</span> {</span>
-<span id="cb28-2"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f4cccc</span><span class="op">;</span></span>
-<span id="cb28-3"><a href=""></a>}</span>
-<span id="cb28-4"><a href=""></a></span>
-<span id="cb28-5"><a href=""></a><span class="ex">[</span><span class="ss">data-bs-theme</span><span class="op">=</span><span class="st">"dark"</span><span class="ex">]</span> <span class="fu">.form-control</span> {</span>
-<span id="cb28-6"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#40292C</span><span class="op">;</span></span>
-<span id="cb28-7"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb31-1"><a href=""></a><span class="ex">[</span><span class="ss">data-bs-theme</span><span class="op">=</span><span class="st">"light"</span><span class="ex">]</span> <span class="fu">.form-control</span> {</span>
+<span id="cb31-2"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f4cccc</span><span class="op">;</span></span>
+<span id="cb31-3"><a href=""></a>}</span>
+<span id="cb31-4"><a href=""></a></span>
+<span id="cb31-5"><a href=""></a><span class="ex">[</span><span class="ss">data-bs-theme</span><span class="op">=</span><span class="st">"dark"</span><span class="ex">]</span> <span class="fu">.form-control</span> {</span>
+<span id="cb31-6"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#40292C</span><span class="op">;</span></span>
+<span id="cb31-7"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="syntax-highlighting-theme" class="slide level2">
 <h2>Syntax highlighting theme</h2>
 <p>We can set a syntax highlighting theme for <strong>light mode</strong> and <strong>dark mode</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29" data-code-line-numbers="10,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
-<span id="cb29-2"><a href=""></a>template<span class="sc">:</span></span>
-<span id="cb29-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb29-4"><a href=""></a>  bslib<span class="sc">:</span></span>
-<span id="cb29-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
-<span id="cb29-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
-<span id="cb29-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
-<span id="cb29-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span>
-<span id="cb29-9"><a href=""></a>  light<span class="sc">-</span><span class="cf">switch</span><span class="sc">:</span> true</span>
-<span id="cb29-10"><a href=""></a>  theme<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>light</span>
-<span id="cb29-11"><a href=""></a>  theme<span class="sc">-</span>dark<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>dark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="10,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a>url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>melissavanbussel.github.io<span class="sc">/</span>rmedicine<span class="sc">/</span></span>
+<span id="cb32-2"><a href=""></a>template<span class="sc">:</span></span>
+<span id="cb32-3"><a href=""></a>  bootstrap<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb32-4"><a href=""></a>  bslib<span class="sc">:</span></span>
+<span id="cb32-5"><a href=""></a>    bootswatch<span class="sc">:</span> zephyr</span>
+<span id="cb32-6"><a href=""></a>    primary<span class="sc">:</span> <span class="st">"#c70000"</span></span>
+<span id="cb32-7"><a href=""></a>    base_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Outfit"</span>}</span>
+<span id="cb32-8"><a href=""></a>    code_font<span class="sc">:</span> {google<span class="sc">:</span> <span class="st">"Fira Code"</span>}</span>
+<span id="cb32-9"><a href=""></a>  light<span class="sc">-</span><span class="cf">switch</span><span class="sc">:</span> true</span>
+<span id="cb32-10"><a href=""></a>  theme<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>light</span>
+<span id="cb32-11"><a href=""></a>  theme<span class="sc">-</span>dark<span class="sc">:</span> atom<span class="sc">-</span>one<span class="sc">-</span>dark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -721,45 +730,45 @@ Melissa Van Bussel
 <li>Create descriptions using <code>desc</code></li>
 <li>List the pages using <code>contents</code></li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href=""></a><span class="fu">reference</span><span class="kw">:</span></span>
-<span id="cb30-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Functions that print things</span></span>
-<span id="cb30-3"><a href=""></a><span class="at">    </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions will all print things to your console.</span></span>
-<span id="cb30-4"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb30-5"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_world</span></span>
-<span id="cb30-6"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb33-1"><a href=""></a><span class="fu">reference</span><span class="kw">:</span></span>
+<span id="cb33-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Functions that print things</span></span>
+<span id="cb33-3"><a href=""></a><span class="at">    </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions will all print things to your console.</span></span>
+<span id="cb33-4"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb33-5"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_world</span></span>
+<span id="cb33-6"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="shortcut-topic-matching" class="slide level2">
 <h2>Shortcut: “Topic matching”</h2>
 <p>You can use <a href="https://pkgdown.r-lib.org/reference/build_reference.html#topic-matching">“topic matching”</a> as a shortcut:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>reference<span class="sc">:</span></span>
-<span id="cb31-2"><a href=""></a>  <span class="sc">-</span> title<span class="sc">:</span> Functions that print things</span>
-<span id="cb31-3"><a href=""></a>    desc<span class="sc">:</span> These functions will all print things to your console.</span>
-<span id="cb31-4"><a href=""></a>    contents<span class="sc">:</span></span>
-<span id="cb31-5"><a href=""></a>      <span class="sc">-</span> <span class="fu">starts_with</span>(<span class="st">"print_"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>reference<span class="sc">:</span></span>
+<span id="cb34-2"><a href=""></a>  <span class="sc">-</span> title<span class="sc">:</span> Functions that print things</span>
+<span id="cb34-3"><a href=""></a>    desc<span class="sc">:</span> These functions will all print things to your console.</span>
+<span id="cb34-4"><a href=""></a>    contents<span class="sc">:</span></span>
+<span id="cb34-5"><a href=""></a>      <span class="sc">-</span> <span class="fu">starts_with</span>(<span class="st">"print_"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="getting-fancier-with-the-reference-page" class="slide level2">
 <h2>Getting fancier with the reference page</h2>
 <p>You can also use emojis, and create subsections!</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href=""></a><span class="fu">reference</span><span class="kw">:</span></span>
-<span id="cb32-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">":pencil: Functions that print things"</span></span>
-<span id="cb32-3"><a href=""></a><span class="at">    </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions will all print things to your console.</span></span>
-<span id="cb32-4"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":one: First subsection"</span></span>
-<span id="cb32-5"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb32-6"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_world</span></span>
-<span id="cb32-7"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":two: Second subsection"</span></span>
-<span id="cb32-8"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb32-9"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a href=""></a><span class="fu">reference</span><span class="kw">:</span></span>
+<span id="cb35-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">":pencil: Functions that print things"</span></span>
+<span id="cb35-3"><a href=""></a><span class="at">    </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions will all print things to your console.</span></span>
+<span id="cb35-4"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":one: First subsection"</span></span>
+<span id="cb35-5"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb35-6"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_world</span></span>
+<span id="cb35-7"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">":two: Second subsection"</span></span>
+<span id="cb35-8"><a href=""></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb35-9"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> print_hello_rmedicine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="customizing-navbar-contents" class="slide level2">
 <h2>Customizing navbar contents</h2>
 <ul>
 <li>There are some built-in options for the navbar, such as <code>search</code>, <code>github</code> and <code>lightswitch</code></li>
 </ul>
-<pre><code>navbar:
-  structure:
-    right: [search, github, lightswitch]</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb36-1"><a href=""></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb36-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
+<span id="cb36-3"><a href=""></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">search</span><span class="kw">,</span><span class="at"> github</span><span class="kw">,</span><span class="at"> lightswitch</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="components" class="slide level2">
 <h2>Components</h2>
@@ -768,14 +777,14 @@ Melissa Van Bussel
 <li>Use <a href="https://fontawesome.com/search?ic=free">fontawesome icons</a> to customize the button appearance</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>navbar<span class="sc">:</span></span>
-<span id="cb34-2"><a href=""></a>  structure<span class="sc">:</span></span>
-<span id="cb34-3"><a href=""></a>    right<span class="sc">:</span> [search, github, my_linkedin, lightswitch]</span>
-<span id="cb34-4"><a href=""></a>  components<span class="sc">:</span></span>
-<span id="cb34-5"><a href=""></a>    my_linkedin<span class="sc">:</span></span>
-<span id="cb34-6"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>linkedin</span>
-<span id="cb34-7"><a href=""></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>melissavanbussel<span class="sc">/</span></span>
-<span id="cb34-8"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> LinkedIn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>navbar<span class="sc">:</span></span>
+<span id="cb37-2"><a href=""></a>  structure<span class="sc">:</span></span>
+<span id="cb37-3"><a href=""></a>    right<span class="sc">:</span> [search, github, my_linkedin, lightswitch]</span>
+<span id="cb37-4"><a href=""></a>  components<span class="sc">:</span></span>
+<span id="cb37-5"><a href=""></a>    my_linkedin<span class="sc">:</span></span>
+<span id="cb37-6"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>linkedin</span>
+<span id="cb37-7"><a href=""></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>melissavanbussel<span class="sc">/</span></span>
+<span id="cb37-8"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> LinkedIn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="customizing-footer-contents" class="slide level2">
@@ -784,13 +793,13 @@ Melissa Van Bussel
 <li>The footer works <strong>very</strong> similarly to the navbar</li>
 <li>It’s markdown, so you can include almost anything you want!</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a href=""></a><span class="fu">footer</span><span class="kw">:</span></span>
-<span id="cb35-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
-<span id="cb35-3"><a href=""></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> developed_by</span></span>
-<span id="cb35-4"><a href=""></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> built_with_pkgdown</span></span>
-<span id="cb35-5"><a href=""></a><span class="at">  </span><span class="fu">components</span><span class="kw">:</span></span>
-<span id="cb35-6"><a href=""></a><span class="at">    </span><span class="fu">developed_by</span><span class="kw">:</span><span class="at"> </span><span class="st">"Developed by [Melissa Van Bussel](https://melissavanbussel.com/) :computer: for the [R/Medicine 2025 Conference](https://rconsortium.github.io/RMedicine_website/)."</span></span>
-<span id="cb35-7"><a href=""></a><span class="at">    </span><span class="fu">built_with_pkgdown</span><span class="kw">:</span><span class="at"> </span><span class="st">"This site was built using [pkgdown](https://pkgdown.r-lib.org/)!&amp;nbsp;&amp;nbsp;&lt;img src='https://pkgdown.r-lib.org/logo.png' alt='pkgdown logo' width='25'&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb38-1"><a href=""></a><span class="fu">footer</span><span class="kw">:</span></span>
+<span id="cb38-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
+<span id="cb38-3"><a href=""></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> developed_by</span></span>
+<span id="cb38-4"><a href=""></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> built_with_pkgdown</span></span>
+<span id="cb38-5"><a href=""></a><span class="at">  </span><span class="fu">components</span><span class="kw">:</span></span>
+<span id="cb38-6"><a href=""></a><span class="at">    </span><span class="fu">developed_by</span><span class="kw">:</span><span class="at"> </span><span class="st">"Developed by [Melissa Van Bussel](https://melissavanbussel.com/) :computer: for the [R/Medicine 2025 Conference](https://rconsortium.github.io/RMedicine_website/)."</span></span>
+<span id="cb38-7"><a href=""></a><span class="at">    </span><span class="fu">built_with_pkgdown</span><span class="kw">:</span><span class="at"> </span><span class="st">"This site was built using [pkgdown](https://pkgdown.r-lib.org/)!&amp;nbsp;&amp;nbsp;&lt;img src='https://pkgdown.r-lib.org/logo.png' alt='pkgdown logo' width='25'&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="adding-javascript" class="slide level2">
 <h2>Adding JavaScript</h2>
@@ -811,53 +820,53 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="9-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>navbar<span class="sc">:</span></span>
-<span id="cb37-2"><a href=""></a>  structure<span class="sc">:</span></span>
-<span id="cb37-3"><a href=""></a>    right<span class="sc">:</span> [search, github, my_linkedin, lightswitch]</span>
-<span id="cb37-4"><a href=""></a>  components<span class="sc">:</span></span>
-<span id="cb37-5"><a href=""></a>    my_linkedin<span class="sc">:</span></span>
-<span id="cb37-6"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>linkedin</span>
-<span id="cb37-7"><a href=""></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>melissavanbussel<span class="sc">/</span></span>
-<span id="cb37-8"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> LinkedIn</span>
-<span id="cb37-9"><a href=""></a>   js_alert<span class="sc">:</span></span>
-<span id="cb37-10"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>code</span>
-<span id="cb37-11"><a href=""></a>      href<span class="sc">:</span> <span class="st">"#js_alert#"</span></span>
-<span id="cb37-12"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> JavaScript</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="9-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>navbar<span class="sc">:</span></span>
+<span id="cb40-2"><a href=""></a>  structure<span class="sc">:</span></span>
+<span id="cb40-3"><a href=""></a>    right<span class="sc">:</span> [search, github, my_linkedin, lightswitch]</span>
+<span id="cb40-4"><a href=""></a>  components<span class="sc">:</span></span>
+<span id="cb40-5"><a href=""></a>    my_linkedin<span class="sc">:</span></span>
+<span id="cb40-6"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>linkedin</span>
+<span id="cb40-7"><a href=""></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>melissavanbussel<span class="sc">/</span></span>
+<span id="cb40-8"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> LinkedIn</span>
+<span id="cb40-9"><a href=""></a>    js_alert<span class="sc">:</span></span>
+<span id="cb40-10"><a href=""></a>      icon<span class="sc">:</span> fa<span class="sc">-</span>code</span>
+<span id="cb40-11"><a href=""></a>      href<span class="sc">:</span> <span class="st">"#js_alert#"</span></span>
+<span id="cb40-12"><a href=""></a>      aria<span class="sc">-</span>label<span class="sc">:</span> JavaScript</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb38-1"><a href=""></a><span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"DOMContentLoaded"</span><span class="op">,</span> <span class="kw">function</span>() {</span>
-<span id="cb38-2"><a href=""></a>  <span class="kw">let</span> javascriptAlert <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">".nav-link[href*='#js_alert#']"</span>)<span class="op">;</span></span>
-<span id="cb38-3"><a href=""></a>  javascriptAlert<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (jsAlert) {</span>
-<span id="cb38-4"><a href=""></a>    jsAlert<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
-<span id="cb38-5"><a href=""></a>      <span class="bu">event</span><span class="op">.</span><span class="fu">preventDefault</span>()<span class="op">;</span></span>
-<span id="cb38-6"><a href=""></a>      <span class="fu">alert</span>(<span class="st">"JavaScript is working!"</span>)<span class="op">;</span></span>
-<span id="cb38-7"><a href=""></a>    })<span class="op">;</span></span>
-<span id="cb38-8"><a href=""></a>  })<span class="op">;</span></span>
-<span id="cb38-9"><a href=""></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb41-1"><a href=""></a><span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"DOMContentLoaded"</span><span class="op">,</span> <span class="kw">function</span>() {</span>
+<span id="cb41-2"><a href=""></a>  <span class="kw">let</span> javascriptAlert <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">".nav-link[href*='#js_alert#']"</span>)<span class="op">;</span></span>
+<span id="cb41-3"><a href=""></a>  javascriptAlert<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (jsAlert) {</span>
+<span id="cb41-4"><a href=""></a>    jsAlert<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb41-5"><a href=""></a>      <span class="bu">event</span><span class="op">.</span><span class="fu">preventDefault</span>()<span class="op">;</span></span>
+<span id="cb41-6"><a href=""></a>      <span class="fu">alert</span>(<span class="st">"JavaScript is working!"</span>)<span class="op">;</span></span>
+<span id="cb41-7"><a href=""></a>    })<span class="op">;</span></span>
+<span id="cb41-8"><a href=""></a>  })<span class="op">;</span></span>
+<span id="cb41-9"><a href=""></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="can-you-add-more-files" class="slide level2">
 <h2>Can you add more files?</h2>
 <p>Yes! You can insert <a href="https://pkgdown.r-lib.org/articles/customise.html#additional-html-and-files">additional HTML etc.</a></p>
 <p>For example, we can add additional javascript using <code>after_body</code> in the <code>_pkgdown.yml</code> file:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href=""></a><span class="fu">template</span><span class="kw">:</span></span>
-<span id="cb39-2"><a href=""></a><span class="at">  </span><span class="fu">includes</span><span class="kw">:</span></span>
-<span id="cb39-3"><a href=""></a><span class="fu">    after_body</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb39-4"><a href=""></a>      &lt;script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"&gt;&lt;/script&gt;</span>
-<span id="cb39-5"><a href=""></a>      &lt;script&gt;</span>
-<span id="cb39-6"><a href=""></a>        document.addEventListener("DOMContentLoaded", function () {</span>
-<span id="cb39-7"><a href=""></a>          document.addEventListener("click", function (e) {</span>
-<span id="cb39-8"><a href=""></a>            if (typeof confetti === "function") {</span>
-<span id="cb39-9"><a href=""></a>              const x = e.clientX / window.innerWidth;</span>
-<span id="cb39-10"><a href=""></a>              const y = e.clientY / window.innerHeight;</span>
-<span id="cb39-11"><a href=""></a></span>
-<span id="cb39-12"><a href=""></a>              confetti({</span>
-<span id="cb39-13"><a href=""></a>                origin: { x: x, y: y }</span>
-<span id="cb39-14"><a href=""></a>              });</span>
-<span id="cb39-15"><a href=""></a>            }</span>
-<span id="cb39-16"><a href=""></a>          });</span>
-<span id="cb39-17"><a href=""></a>        });</span>
-<span id="cb39-18"><a href=""></a>      &lt;/script&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb42-1"><a href=""></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb42-2"><a href=""></a><span class="at">  </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb42-3"><a href=""></a><span class="fu">    after_body</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb42-4"><a href=""></a>      &lt;script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"&gt;&lt;/script&gt;</span>
+<span id="cb42-5"><a href=""></a>      &lt;script&gt;</span>
+<span id="cb42-6"><a href=""></a>        document.addEventListener("DOMContentLoaded", function () {</span>
+<span id="cb42-7"><a href=""></a>          document.addEventListener("click", function (e) {</span>
+<span id="cb42-8"><a href=""></a>            if (typeof confetti === "function") {</span>
+<span id="cb42-9"><a href=""></a>              const x = e.clientX / window.innerWidth;</span>
+<span id="cb42-10"><a href=""></a>              const y = e.clientY / window.innerHeight;</span>
+<span id="cb42-11"><a href=""></a></span>
+<span id="cb42-12"><a href=""></a>              confetti({</span>
+<span id="cb42-13"><a href=""></a>                origin: { x: x, y: y }</span>
+<span id="cb42-14"><a href=""></a>              });</span>
+<span id="cb42-15"><a href=""></a>            }</span>
+<span id="cb42-16"><a href=""></a>          });</span>
+<span id="cb42-17"><a href=""></a>        });</span>
+<span id="cb42-18"><a href=""></a>      &lt;/script&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section id="break-1" class="title-slide slide level1 center">
 <h1>BREAK</h1>
@@ -917,7 +926,7 @@ Melissa Van Bussel
 <section id="github-actions-in-the-.githubworkflowspkgdown.yaml-file" class="slide level2">
 <h2>GitHub Actions in the <code>.github/workflows/pkgdown.yaml</code> file</h2>
 <p>…The Quarto installation is just one small part of <em>this</em> action</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb40-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r-dependencies@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r-dependencies@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="whats-my-point" class="slide level2">
 <h2>What’s my point?</h2>
@@ -987,9 +996,10 @@ Melissa Van Bussel
 </section>
 <section id="modifying-the-.githubworkflowspkgdown.yaml-file" class="slide level2">
 <h2>Modifying the <code>.github/workflows/pkgdown.yaml</code> file</h2>
+<p>We’ll add our custom image as <code>pkgdown/assets/custom_link.svg</code> (any files in the <code>pkgdown/assets</code> folder will be automatically copied to the <code>docs</code> folder during the workflow.</p>
 <p>We need to add this <em>after</em> the <code>pkgdown::build_site_github_pages()</code> function is called.</p>
-<pre><code>      - name: Override link.svg image with custom_link.svg image
-        run: cp docs/custom_link.svg docs/link.svg</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb44-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Override link.svg image with custom_link.svg image</span></span>
+<span id="cb44-2"><a href=""></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> cp docs/custom_link.svg docs/link.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="vote-which-topic-do-you-want-to-cover" class="slide level2">
 <h2>Vote: Which topic do you want to cover?</h2>
@@ -1008,11 +1018,12 @@ Melissa Van Bussel
 <section id="adding-a-quarto-vignette" class="slide level2">
 <h2>Adding a Quarto vignette</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="fu">use_vignette</span>(<span class="at">name =</span> <span class="st">"tutorial.qmd"</span>, <span class="at">title =</span> <span class="st">"Tutorial Title"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="fu">use_vignette</span>(<span class="at">name =</span> <span class="st">"tutorial.qmd"</span>, <span class="at">title =</span> <span class="st">"Tutorial Title"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>Build &gt; Install &gt; Clean and install</code></li>
 <li>Ensure Quarto is installed (including the <code>quarto</code> package in R)</li>
+<li>Contents can be pasted from <a href="https://github.com/melissavanbussel/rmedicine/blob/main/vignettes/my_vignette.qmd">here</a></li>
 </ul>
 </section>
 <section id="troubleshooting-quarto-vignettes" class="slide level2">
@@ -1021,10 +1032,10 @@ Melissa Van Bussel
 <li>If you use any packages that are not in your <code>DESCRIPTION</code> file, you must add it as a dependency in <code>.github/workflows/pkgdown.yaml</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a>     <span class="sc">-</span> uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">-</span>dependencies<span class="sc">@</span>v2</span>
-<span id="cb43-2"><a href=""></a>        with<span class="sc">:</span></span>
-<span id="cb43-3"><a href=""></a>          extra<span class="sc">-</span>packages<span class="sc">:</span> any<span class="sc">::</span>pkgdown, local<span class="sc">::</span>., reticulate</span>
-<span id="cb43-4"><a href=""></a>          needs<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a>     <span class="sc">-</span> uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">-</span>dependencies<span class="sc">@</span>v2</span>
+<span id="cb46-2"><a href=""></a>        with<span class="sc">:</span></span>
+<span id="cb46-3"><a href=""></a>          extra<span class="sc">-</span>packages<span class="sc">:</span> any<span class="sc">::</span>pkgdown, local<span class="sc">::</span>., reticulate</span>
+<span id="cb46-4"><a href=""></a>          needs<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="troubleshooting-quarto-vignettes-1" class="slide level2">
@@ -1046,29 +1057,29 @@ Melissa Van Bussel
 <section id="changing-your-navbar-structure" class="slide level2">
 <h2>Changing your navbar structure</h2>
 <p>You can type <code>Alt+0160</code> to add a blank character (<code>&amp;nbsp;</code> will not work).</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb44-1"><a href=""></a><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb44-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
-<span id="cb44-3"><a href=""></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">vignettes</span><span class="kw">,</span><span class="at"> rd_files</span><span class="kw">]</span></span>
-<span id="cb44-4"><a href=""></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">search</span><span class="kw">,</span><span class="at"> github</span><span class="kw">,</span><span class="at"> my_linkedin</span><span class="kw">,</span><span class="at"> js_alert</span><span class="kw">,</span><span class="at"> lightswitch</span><span class="kw">]</span></span>
-<span id="cb44-5"><a href=""></a><span class="at">  </span><span class="fu">components</span><span class="kw">:</span></span>
-<span id="cb44-6"><a href=""></a><span class="at">    </span><span class="fu">vignettes</span><span class="kw">:</span></span>
-<span id="cb44-7"><a href=""></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;Vignettes"</span></span>
-<span id="cb44-8"><a href=""></a><span class="at">      </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-book</span></span>
-<span id="cb44-9"><a href=""></a><span class="at">      </span><span class="fu">menu</span><span class="kw">:</span></span>
-<span id="cb44-10"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Examples</span></span>
-<span id="cb44-11"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;Tutorial Title"</span></span>
-<span id="cb44-12"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> articles/my_vignette.html</span></span>
-<span id="cb44-13"><a href=""></a><span class="at">    </span><span class="fu">rd_files</span><span class="kw">:</span></span>
-<span id="cb44-14"><a href=""></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;Function Documentation"</span></span>
-<span id="cb44-15"><a href=""></a><span class="at">      </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-file</span></span>
-<span id="cb44-16"><a href=""></a><span class="at">      </span><span class="fu">menu</span><span class="kw">:</span></span>
-<span id="cb44-17"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> All functions</span></span>
-<span id="cb44-18"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/index.html</span></span>
-<span id="cb44-19"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;Print things"</span></span>
-<span id="cb44-20"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;&nbsp;&nbsp;Print Hello World"</span></span>
-<span id="cb44-21"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/print_hello_world.html</span></span>
-<span id="cb44-22"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;&nbsp;&nbsp;Print Hello R/Medicine"</span></span>
-<span id="cb44-23"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/print_hello_rmedicine.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb47-1"><a href=""></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb47-2"><a href=""></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
+<span id="cb47-3"><a href=""></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">vignettes</span><span class="kw">,</span><span class="at"> rd_files</span><span class="kw">]</span></span>
+<span id="cb47-4"><a href=""></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">search</span><span class="kw">,</span><span class="at"> github</span><span class="kw">,</span><span class="at"> my_linkedin</span><span class="kw">,</span><span class="at"> js_alert</span><span class="kw">,</span><span class="at"> lightswitch</span><span class="kw">]</span></span>
+<span id="cb47-5"><a href=""></a><span class="at">  </span><span class="fu">components</span><span class="kw">:</span></span>
+<span id="cb47-6"><a href=""></a><span class="at">    </span><span class="fu">vignettes</span><span class="kw">:</span></span>
+<span id="cb47-7"><a href=""></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;Vignettes"</span></span>
+<span id="cb47-8"><a href=""></a><span class="at">      </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-book</span></span>
+<span id="cb47-9"><a href=""></a><span class="at">      </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb47-10"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Examples</span></span>
+<span id="cb47-11"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;Tutorial Title"</span></span>
+<span id="cb47-12"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> articles/my_vignette.html</span></span>
+<span id="cb47-13"><a href=""></a><span class="at">    </span><span class="fu">rd_files</span><span class="kw">:</span></span>
+<span id="cb47-14"><a href=""></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;Function Documentation"</span></span>
+<span id="cb47-15"><a href=""></a><span class="at">      </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-file</span></span>
+<span id="cb47-16"><a href=""></a><span class="at">      </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb47-17"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> All functions</span></span>
+<span id="cb47-18"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/index.html</span></span>
+<span id="cb47-19"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;Print things"</span></span>
+<span id="cb47-20"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;&nbsp;&nbsp;Print Hello World"</span></span>
+<span id="cb47-21"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/print_hello_world.html</span></span>
+<span id="cb47-22"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"&nbsp;&nbsp;&nbsp;&nbsp;Print Hello R/Medicine"</span></span>
+<span id="cb47-23"><a href=""></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> reference/print_hello_rmedicine.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="further-customization" class="title-slide slide level1 center">
@@ -1080,57 +1091,51 @@ Melissa Van Bussel
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>In the <code>pkgdown/extra.js</code> file (replace with your package name, URL, and folder depth):</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb45-1"><a href=""></a><span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"DOMContentLoaded"</span><span class="op">,</span> <span class="kw">function</span> () {</span>
-<span id="cb45-2"><a href=""></a>  <span class="kw">const</span> brand <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".navbar-brand"</span>)<span class="op">;</span></span>
-<span id="cb45-3"><a href=""></a>  <span class="cf">if</span> (<span class="op">!</span>brand) <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb45-4"><a href=""></a></span>
-<span id="cb45-5"><a href=""></a>  <span class="co">// Use different offset based on environment</span></span>
-<span id="cb45-6"><a href=""></a>  <span class="kw">const</span> offset <span class="op">=</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">protocol</span> <span class="op">===</span> <span class="st">"file:"</span> <span class="op">?</span> <span class="dv">7</span> <span class="op">:</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb45-7"><a href=""></a></span>
-<span id="cb45-8"><a href=""></a>  <span class="kw">const</span> pathParts <span class="op">=</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">pathname</span><span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">^\/+</span><span class="ss">/</span><span class="op">,</span> <span class="st">''</span>)<span class="op">.</span><span class="fu">split</span>(<span class="st">'/'</span>)<span class="op">;</span></span>
-<span id="cb45-9"><a href=""></a>  <span class="kw">const</span> depth <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> pathParts<span class="op">.</span><span class="at">length</span> <span class="op">-</span> offset)<span class="op">;</span></span>
-<span id="cb45-10"><a href=""></a>  <span class="kw">const</span> prefix <span class="op">=</span> <span class="st">'../'</span><span class="op">.</span><span class="fu">repeat</span>(depth)<span class="op">;</span></span>
-<span id="cb45-11"><a href=""></a></span>
-<span id="cb45-12"><a href=""></a>  <span class="kw">const</span> imgSrc <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>prefix<span class="sc">}</span><span class="vs">logo.png`</span><span class="op">;</span></span>
-<span id="cb45-13"><a href=""></a></span>
-<span id="cb45-14"><a href=""></a>  brand<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`</span></span>
-<span id="cb45-15"><a href=""></a><span class="vs">    &lt;img src="</span><span class="sc">${</span>imgSrc<span class="sc">}</span><span class="vs">" height="30" style="vertical-align: middle; margin-right: 10px;""&gt;</span></span>
-<span id="cb45-16"><a href=""></a><span class="vs">    &lt;span style="vertical-align: middle;"&gt;rmedicine&lt;/span&gt;</span></span>
-<span id="cb45-17"><a href=""></a><span class="vs">  `</span><span class="op">;</span></span>
-<span id="cb45-18"><a href=""></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb48-1"><a href=""></a><span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"DOMContentLoaded"</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb48-2"><a href=""></a>  <span class="kw">const</span> brand <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".navbar-brand"</span>)<span class="op">;</span></span>
+<span id="cb48-3"><a href=""></a>  <span class="cf">if</span> (<span class="op">!</span>brand) <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb48-4"><a href=""></a></span>
+<span id="cb48-5"><a href=""></a>  <span class="kw">const</span> isFileProtocol <span class="op">=</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">protocol</span> <span class="op">===</span> <span class="st">"file:"</span><span class="op">;</span></span>
+<span id="cb48-6"><a href=""></a>  <span class="kw">const</span> imgSrc <span class="op">=</span> isFileProtocol <span class="op">?</span> <span class="st">"../"</span><span class="op">.</span><span class="fu">repeat</span>(<span class="dv">7</span>) <span class="op">+</span> <span class="st">"logo.png"</span> <span class="op">:</span> <span class="st">"logo.png"</span><span class="op">;</span></span>
+<span id="cb48-7"><a href=""></a></span>
+<span id="cb48-8"><a href=""></a>  brand<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`</span></span>
+<span id="cb48-9"><a href=""></a><span class="vs">    &lt;img src="</span><span class="sc">${</span>imgSrc<span class="sc">}</span><span class="vs">" height="30" style="vertical-align: middle; margin-right: 10px;"&gt;</span></span>
+<span id="cb48-10"><a href=""></a><span class="vs">    &lt;span style="vertical-align: middle;"&gt;rmedicine&lt;/span&gt;</span></span>
+<span id="cb48-11"><a href=""></a><span class="vs">  `</span><span class="op">;</span></span>
+<span id="cb48-12"><a href=""></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p>In the <code>pkgdown/extra.scss</code> file (to add a hover effect):</p>
-<pre><code>.navbar-brand:hover {
-  color: var(--bs-secondary-color);
-}</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb49-1"><a href=""></a><span class="fu">.navbar-brand</span><span class="in">:hover</span> {</span>
+<span id="cb49-2"><a href=""></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--bs-secondary-color</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb49-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="customizing-the-sidebar" class="slide level2">
 <h2>Customizing the sidebar</h2>
 <p>You can add or remove any of the <a href="https://pkgdown.r-lib.org/reference/build_home.html?q=sidebar#sidebar">default components</a>:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb47-1"><a href=""></a><span class="fu">home</span><span class="kw">:</span></span>
-<span id="cb47-2"><a href=""></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb47-3"><a href=""></a><span class="at">    </span><span class="fu">structure</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">links</span><span class="kw">,</span><span class="at"> authors</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb50-1"><a href=""></a><span class="fu">home</span><span class="kw">:</span></span>
+<span id="cb50-2"><a href=""></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb50-3"><a href=""></a><span class="at">    </span><span class="fu">structure</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">links</span><span class="kw">,</span><span class="at"> authors</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="customizing-author-appearance" class="slide level2">
 <h2>Customizing author appearance</h2>
 <p>You can customize the information for each author, including by adding arbitrary HTML:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb48-1"><a href=""></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb48-2"><a href=""></a><span class="at">  </span><span class="fu">Melissa Van Bussel</span><span class="kw">:</span></span>
-<span id="cb48-3"><a href=""></a><span class="at">    </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://melissavanbussel.com/</span></span>
-<span id="cb48-4"><a href=""></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;img src='https://images.squarespace-cdn.com/content/v1/615e5d6733744f26a45a0916/0005b0b1-e327-4965-89c0-3c38a167ac35/Melissa_VanBussel_2025.jpg?format=2500w' width=100 alt=''&gt;&lt;br&gt;&lt;span style=''&gt;Melissa Van Bussel&lt;/span&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb51-1"><a href=""></a><span class="fu">authors</span><span class="kw">:</span></span>
+<span id="cb51-2"><a href=""></a><span class="at">  </span><span class="fu">Melissa Van Bussel</span><span class="kw">:</span></span>
+<span id="cb51-3"><a href=""></a><span class="at">    </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://melissavanbussel.com/</span></span>
+<span id="cb51-4"><a href=""></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;img src='https://images.squarespace-cdn.com/content/v1/615e5d6733744f26a45a0916/0005b0b1-e327-4965-89c0-3c38a167ac35/Melissa_VanBussel_2025.jpg?format=2500w' width=100 alt=''&gt;&lt;br&gt;&lt;span style=''&gt;Melissa Van Bussel&lt;/span&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="creating-custom-sections-in-your-sidebar" class="slide level2">
 <h2>Creating custom sections in your sidebar</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="3,4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a>home<span class="sc">:</span></span>
-<span id="cb49-2"><a href=""></a>  sidebar<span class="sc">:</span></span>
-<span id="cb49-3"><a href=""></a>    structure<span class="sc">:</span> [badges, links, authors]</span>
-<span id="cb49-4"><a href=""></a>    components<span class="sc">:</span></span>
-<span id="cb49-5"><a href=""></a>      badges<span class="sc">:</span></span>
-<span id="cb49-6"><a href=""></a>        title<span class="sc">:</span> Package badges</span>
-<span id="cb49-7"><a href=""></a>        text<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb49-8"><a href=""></a>          Placeholder text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="3,4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a>home<span class="sc">:</span></span>
+<span id="cb52-2"><a href=""></a>  sidebar<span class="sc">:</span></span>
+<span id="cb52-3"><a href=""></a>    structure<span class="sc">:</span> [badges, links, authors]</span>
+<span id="cb52-4"><a href=""></a>    components<span class="sc">:</span></span>
+<span id="cb52-5"><a href=""></a>      badges<span class="sc">:</span></span>
+<span id="cb52-6"><a href=""></a>        title<span class="sc">:</span> Package badges</span>
+<span id="cb52-7"><a href=""></a>        text<span class="sc">:</span> <span class="er">|</span></span>
+<span id="cb52-8"><a href=""></a>          Placeholder text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="simple-badges" class="slide level2">
@@ -1140,9 +1145,9 @@ Melissa Van Bussel
 <li>Package version on GitHub: <a href="https://shields.io/badges/git-hub-r-package-version">https://shields.io/badges/git-hub-r-package-version</a></li>
 <li>Workflow/pipeline status: <a href="https://shields.io/badges/git-hub-actions-workflow-status">https://shields.io/badges/git-hub-actions-workflow-status</a></li>
 </ul>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb50-1"><a href=""></a><span class="fu">        text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb50-2"><a href=""></a>          ![](https://img.shields.io/github/r-package/v/melissavanbussel/rmedicine?label=rmedicine)&lt;br&gt;</span>
-<span id="cb50-3"><a href=""></a>          ![](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)&lt;br&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb53-1"><a href=""></a><span class="fu">        text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb53-2"><a href=""></a>          ![](https://img.shields.io/github/r-package/v/melissavanbussel/rmedicine?label=rmedicine)&lt;br&gt;</span>
+<span id="cb53-3"><a href=""></a>          ![](https://img.shields.io/github/actions/workflow/status/melissavanbussel/rmedicine/pkgdown.yaml)&lt;br&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="badges-that-require-modifying-your-workflow-file" class="slide level2">
 <h2>Badges that require modifying your workflow file</h2>
@@ -1166,14 +1171,14 @@ Melissa Van Bussel
 <section id="calculating-the-code-coverage" class="slide level2">
 <h2>Calculating the code coverage</h2>
 <p>In the <code>_pkgdown.yml</code> file:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb51-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Add test coverage badge</span></span>
-<span id="cb51-2"><a href=""></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> Rscript -e "jsonlite::write_json(list(coverage = sprintf('%.1f%%', covr::percent_coverage(covr::package_coverage()))), 'docs/coverage.json', auto_unbox = TRUE)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb54-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Add test coverage badge</span></span>
+<span id="cb54-2"><a href=""></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> Rscript -e "jsonlite::write_json(list(coverage = sprintf('%.1f%%', covr::percent_coverage(covr::package_coverage()))), 'docs/coverage.json', auto_unbox = TRUE)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We now need to add the <code>jsonlite</code>, <code>testthat</code>, and <code>covr</code> packages to our workflow’s package installations.</p>
 <p>In the <code>.github/workflows/pkgdown.yaml</code> file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a>      <span class="sc">-</span> uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">-</span>dependencies<span class="sc">@</span>v2</span>
-<span id="cb52-2"><a href=""></a>        with<span class="sc">:</span></span>
-<span id="cb52-3"><a href=""></a>          extra<span class="sc">-</span>packages<span class="sc">:</span> any<span class="sc">::</span>pkgdown, local<span class="sc">::</span>., reticulate, jsonlite, testthat, covr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href=""></a>      <span class="sc">-</span> uses<span class="sc">:</span> r<span class="sc">-</span>lib<span class="sc">/</span>actions<span class="sc">/</span>setup<span class="sc">-</span>r<span class="sc">-</span>dependencies<span class="sc">@</span>v2</span>
+<span id="cb55-2"><a href=""></a>        with<span class="sc">:</span></span>
+<span id="cb55-3"><a href=""></a>          extra<span class="sc">-</span>packages<span class="sc">:</span> any<span class="sc">::</span>pkgdown, local<span class="sc">::</span>., reticulate, jsonlite, testthat, covr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-the-badge" class="slide level2">
@@ -1188,16 +1193,16 @@ Melissa Van Bussel
 <section id="adding-the-badge-to-the-sidebar" class="slide level2">
 <h2>Adding the badge to the sidebar</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a>home<span class="sc">:</span></span>
-<span id="cb53-2"><a href=""></a>  sidebar<span class="sc">:</span></span>
-<span id="cb53-3"><a href=""></a>    structure<span class="sc">:</span> [badges, links, authors]</span>
-<span id="cb53-4"><a href=""></a>    components<span class="sc">:</span></span>
-<span id="cb53-5"><a href=""></a>      badges<span class="sc">:</span></span>
-<span id="cb53-6"><a href=""></a>        title<span class="sc">:</span> Package badges</span>
-<span id="cb53-7"><a href=""></a>        text<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb53-8"><a href=""></a>          <span class="sc">!</span>[](https<span class="sc">:</span><span class="er">//</span>img.shields.io<span class="sc">/</span>github<span class="sc">/</span>r<span class="sc">-</span>package<span class="sc">/</span>v<span class="sc">/</span>melissavanbussel<span class="sc">/</span>rmedicine?<span class="at">label=</span>rmedicine)<span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
-<span id="cb53-9"><a href=""></a>          <span class="sc">!</span>[](https<span class="sc">:</span><span class="er">//</span>img.shields.io<span class="sc">/</span>github<span class="sc">/</span>actions<span class="sc">/</span>workflow<span class="sc">/</span>status<span class="sc">/</span>melissavanbussel<span class="sc">/</span>rmedicine<span class="sc">/</span>pkgdown.yaml)<span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
-<span id="cb53-10"><a href=""></a>          <span class="sc">!</span>[](https<span class="sc">:</span><span class="er">//</span>img.shields.io<span class="sc">/</span>badge<span class="sc">/</span>dynamic<span class="sc">/</span>json?<span class="at">url=</span>https<span class="sc">%3A%</span><span class="dv">2</span>F<span class="sc">%2Fmelissavanbussel.github.io%</span><span class="dv">2</span>Frmedicine<span class="sc">%2Fcoverage.json&amp;query=%</span><span class="fl">24.</span>coverage<span class="sc">&amp;</span><span class="at">label=</span>test%<span class="dv">20</span>coverage)<span class="sc">&lt;</span>br<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href=""></a>home<span class="sc">:</span></span>
+<span id="cb56-2"><a href=""></a>  sidebar<span class="sc">:</span></span>
+<span id="cb56-3"><a href=""></a>    structure<span class="sc">:</span> [badges, links, authors]</span>
+<span id="cb56-4"><a href=""></a>    components<span class="sc">:</span></span>
+<span id="cb56-5"><a href=""></a>      badges<span class="sc">:</span></span>
+<span id="cb56-6"><a href=""></a>        title<span class="sc">:</span> Package badges</span>
+<span id="cb56-7"><a href=""></a>        text<span class="sc">:</span> <span class="er">|</span></span>
+<span id="cb56-8"><a href=""></a>          <span class="sc">!</span>[](https<span class="sc">:</span><span class="er">//</span>img.shields.io<span class="sc">/</span>github<span class="sc">/</span>r<span class="sc">-</span>package<span class="sc">/</span>v<span class="sc">/</span>melissavanbussel<span class="sc">/</span>rmedicine?<span class="at">label=</span>rmedicine)<span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
+<span id="cb56-9"><a href=""></a>          <span class="sc">!</span>[](https<span class="sc">:</span><span class="er">//</span>img.shields.io<span class="sc">/</span>github<span class="sc">/</span>actions<span class="sc">/</span>workflow<span class="sc">/</span>status<span class="sc">/</span>melissavanbussel<span class="sc">/</span>rmedicine<span class="sc">/</span>pkgdown.yaml)<span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
+<span id="cb56-10"><a href=""></a>          <span class="sc">!</span>[](https<span class="sc">:</span><span class="er">//</span>img.shields.io<span class="sc">/</span>badge<span class="sc">/</span>dynamic<span class="sc">/</span>json?<span class="at">url=</span>https<span class="sc">%3A%</span><span class="dv">2</span>F<span class="sc">%2Fmelissavanbussel.github.io%</span><span class="dv">2</span>Frmedicine<span class="sc">%2Fcoverage.json&amp;query=%</span><span class="fl">24.</span>coverage<span class="sc">&amp;</span><span class="at">label=</span>test%<span class="dv">20</span>coverage)<span class="sc">&lt;</span>br<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section id="break-2" class="title-slide slide level1 center">
@@ -1215,7 +1220,7 @@ Melissa Van Bussel
 <ul>
 <li>By default, your website will end with <code>.github.io</code></li>
 <li>You can purchase a custom domain from any provider (you do not need to purchase hosting services)</li>
-<li>For this workshop, I purchased <code>ggnot2.site</code> for a year for <span class="math inline">\(\approx\)</span> $2 CAD from `<a href="https://www.domain.com/">domain.com</a></li>
+<li>For this workshop, I purchased <code>ggnot2.site</code> for a year for <span class="math inline">\(\approx\)</span> $2 CAD from <a href="https://www.domain.com/">domain.com</a></li>
 </ul>
 </section>
 <section id="telling-your-domain-to-point-to-your-github-pages" class="slide level2">
@@ -1273,8 +1278,8 @@ Melissa Van Bussel
 <li>Add <code>^slides$</code> to your <code>.Rbuildignore</code></li>
 <li>Add a <code>quarto render</code> command to your <code>.github/workflows/pkgdown.yaml</code> file, and output the files to the <code>docs</code> folder</li>
 </ul>
-<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb56-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render the quarto slides</span></span>
-<span id="cb56-2"><a href=""></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> quarto render slides/slides.qmd --output-dir="../docs"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb59-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render the quarto slides</span></span>
+<span id="cb59-2"><a href=""></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> quarto render slides/slides.qmd --output-dir="../docs"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="feedback-form" class="slide level2">
 <h2>Feedback form</h2>
