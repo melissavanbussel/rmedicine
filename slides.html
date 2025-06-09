@@ -648,6 +648,7 @@ Melissa Van Bussel
 <pre><code>└── 📁 rmedicine/
     └── 📁 pkgdown/
         └── 📄 extra.scss</code></pre>
+<p>Minimal content for <code>extra.scss:</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="sc">/</span><span class="er">*</span><span class="sc">--</span> scss<span class="sc">:</span>defaults <span class="sc">--</span><span class="er">*/</span></span>
 <span id="cb28-2"><a href=""></a><span class="er">/*</span><span class="sc">--</span> scss<span class="sc">:</span>rules <span class="sc">--</span><span class="er">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -996,18 +997,20 @@ Melissa Van Bussel
 </section>
 <section id="modifying-the-.githubworkflowspkgdown.yaml-file" class="slide level2">
 <h2>Modifying the <code>.github/workflows/pkgdown.yaml</code> file</h2>
-<p>We’ll add our custom image as <code>pkgdown/assets/custom_link.svg</code> (any files in the <code>pkgdown/assets</code> folder will be automatically copied to the <code>docs</code> folder during the workflow.</p>
-<p>We need to add this <em>after</em> the <code>pkgdown::build_site_github_pages()</code> function is called.</p>
+<ul>
+<li>We’ll add our custom image as <code>pkgdown/assets/custom_link.svg</code> (any files in the <code>pkgdown/assets</code> folder will be automatically copied to the <code>docs</code> folder during the workflow).</li>
+<li>We need to add this <em>after</em> the <code>pkgdown::build_site_github_pages()</code> function is called.</li>
+</ul>
 <div class="sourceCode" id="cb44"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb44-1"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Override link.svg image with custom_link.svg image</span></span>
 <span id="cb44-2"><a href=""></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> cp docs/custom_link.svg docs/link.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="vote-which-topic-do-you-want-to-cover" class="slide level2">
 <h2>Vote: Which topic do you want to cover?</h2>
 <ul>
-<li>Quarto vignettes</li>
-<li>Logo image in the navbar</li>
-<li>Adding a dynamic test coverage badge</li>
-<li>Custom domain for your GitHub Pages</li>
+<li>A: Quarto vignettes</li>
+<li>B: Logo image in the navbar</li>
+<li>C: Adding a dynamic test coverage badge</li>
+<li>D: Custom domain for your GitHub Pages</li>
 </ul>
 </section></section>
 <section>
