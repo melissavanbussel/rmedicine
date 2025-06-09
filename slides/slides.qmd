@@ -152,7 +152,7 @@ gitcreds::gitcreds_set()
 ## Creating a new project
 
 * Make sure the `devtools` package is installed
-* `File > New project > R package using devtools`
+* `File > New project > New Directory > R package using devtools`
 * Name of the package: `rmedicine`
 
 ```{r}
@@ -162,19 +162,24 @@ library(pkgdown)
 
 ## The `DESCRIPTION` file
 
-<br>
-
 Run 
-
-<br>
 
 ```{r}
 use_mit_license()
 ```
 
-<br>
+then update the `Authors@R` field
 
-then update the `Authors@R` field and change the version number to something a little less long.
+```{r}
+Authors@R: 
+    person("Melissa", "Van Bussel", , "melissalisevb@gmail.com", role = c("aut", "cre"))
+```
+
+and change the version number to something a little less long.
+
+```{r}
+Version: 0.0.9
+```
 
 ## Creating a `README.md` file
 
@@ -489,6 +494,11 @@ template:
         └── 📄 extra.scss
 ```        
 
+```{r}
+/*-- scss:defaults --*/
+/*-- scss:rules --*/
+```
+
 ## Right clicking and inspecting
 
 Let's change the colour of the search bar! 
@@ -610,7 +620,7 @@ reference:
 
 * There are some built-in options for the navbar, such as `search`, `github` and `lightswitch`
 
-```
+```yaml
 navbar:
   structure:
     right: [search, github, lightswitch]
@@ -678,7 +688,7 @@ navbar:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/melissavanbussel/
       aria-label: LinkedIn
-   js_alert:
+    js_alert:
       icon: fa-code
       href: "#js_alert#"
       aria-label: JavaScript
@@ -829,9 +839,11 @@ We're going to change the `link.svg` image
 
 ## Modifying the `.github/workflows/pkgdown.yaml` file
 
+We'll add our custom image as `pkgdown/assets/custom_link.svg` (any files in the `pkgdown/assets` folder will be automatically copied to the `docs` folder during the workflow.
+
 We need to add this *after* the `pkgdown::build_site_github_pages()` function is called.
 
-```
+```yaml
       - name: Override link.svg image with custom_link.svg image
         run: cp docs/custom_link.svg docs/link.svg
 ```
@@ -853,6 +865,7 @@ use_vignette(name = "tutorial.qmd", title = "Tutorial Title")
 
 * `Build > Install > Clean and install`
 * Ensure Quarto is installed (including the `quarto` package in R)
+* Contents can be pasted from [here](https://github.com/melissavanbussel/rmedicine/blob/main/vignettes/my_vignette.qmd)
 
 ## Troubleshooting Quarto vignettes
 
@@ -921,21 +934,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const brand = document.querySelector(".navbar-brand");
   if (!brand) return;
 
-  // Use different offset based on environment
-  const offset = window.location.protocol === "file:" ? 7 : 1;
-
-  const pathParts = window.location.pathname.replace(/^\/+/, '').split('/');
-  const depth = Math.max(0, pathParts.length - offset);
-  const prefix = '../'.repeat(depth);
-
-  const imgSrc = `${prefix}logo.png`;
+  const isFileProtocol = window.location.protocol === "file:";
+  const imgSrc = isFileProtocol ? "../".repeat(7) + "logo.png" : "logo.png";
 
   brand.innerHTML = `
-    <img src="${imgSrc}" height="30" style="vertical-align: middle; margin-right: 10px;"">
+    <img src="${imgSrc}" height="30" style="vertical-align: middle; margin-right: 10px;">
     <span style="vertical-align: middle;">rmedicine</span>
   `;
 });
-
 ```
 
 :::
@@ -944,7 +950,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 In the `pkgdown/extra.scss` file (to add a hover effect):
 
-```
+```css
 .navbar-brand:hover {
   color: var(--bs-secondary-color);
 }
@@ -1070,7 +1076,7 @@ home:
 
 * By default, your website will end with `.github.io`
 * You can purchase a custom domain from any provider (you do not need to purchase hosting services)
-* For this workshop, I purchased `ggnot2.site` for a year for $\approx$ $2 CAD from `[domain.com](https://www.domain.com/)
+* For this workshop, I purchased `ggnot2.site` for a year for $\approx$ $2 CAD from [domain.com](https://www.domain.com/)
 
 ## Telling your domain to point to your GitHub Pages
 
